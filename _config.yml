@@ -1,20 +1,23 @@
 # Site Settings
 title: "Box of Hammers"
 name: "BoxOfHammers"
-description: "Homelab, F5, and automation adventures."
+description: "F5 ADC engineering, home lab, and automation adventures."
 url: "https://itlostandfound.github.io"
 baseurl: "/Jekyll.GitHub"
 timezone: America/Chicago
 locale: "en-US"
 
-# Minimal Mistakes Theme via remote
+# Minimal Mistakes Theme via remote (kept for fallback / SEO tags)
 remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 minimal_mistakes_skin: "dark"
+
+# Include _pages directory
+include:
+  - _pages
 
 # Site Author
 author:
   name: "BoxOfHammers"
-  avatar: "/assets/images/avatar.png"
   bio: "F5 ADC Engineer. Home labber. Learning Python."
   links:
     - label: "GitHub"
@@ -35,9 +38,9 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
+      layout: post
+      author_profile: false
+      read_time: false
       comments: false
       share: false
       related: true
@@ -47,14 +50,12 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
-
-# Navigation
-navigation:
-  - title: "Home"
-    url: /
-  - title: "About"
-    url: /about/
+      author_profile: false
+  # _pages directory
+  - scope:
+      path: "_pages"
+    values:
+      layout: single
 
 # Plugins
 plugins:

@@ -1,0 +1,28 @@
+---
+layout: single
+title: Hermes Agent
+permalink: /ai/hermes/
+---
+
+## Hermes Agent
+
+An open-source multi-profile AI agent by Nous Research. Runs locally, orchestrates tools, and manages persistent memory across sessions.
+
+### How I Use It
+
+- **Multi-profile setup** — Separate agents for Playground, Research, PMO, and Development work
+- **Cron jobs** — Automated backups, health checks, daily reports
+- **Discord integration** — Real-time notifications and agent communication
+- **Custom skills** — Reusable workflows encoded as SKILL.md files
+- **Kanban orchestration** — PMO agent assigns tasks to specialist sub-agents
+
+### Stack
+
+- Primary LLM: GLM-5.1 via Ollama Cloud
+- Home directory: `~/.hermes` with profile isolation under `~/.hermes/profiles/`
+- Skills, cron, memory, and SOUL.md per profile
+- Gateway process for API and Discord bridge
+
+### Coming Soon
+
+Architecture deep-dive, profile setup guide, and lessons from running agents 24/7.

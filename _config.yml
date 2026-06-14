@@ -1,6 +1,6 @@
 # Site Settings
-title: "Box of Hammers"
-name: "BoxOfHammers"
+title: "IT Lost and Found"
+name: "Michael Yates"
 description: "F5 ADC engineering, home lab, and automation adventures."
 url: "https://itlostandfound.github.io"
 baseurl: "/Jekyll.GitHub"
@@ -17,7 +17,7 @@ include:
 
 # Site Author
 author:
-  name: "BoxOfHammers"
+  name: "Michael Yates"
   bio: "F5 ADC Engineer. Home labber. Learning Python."
   links:
     - label: "GitHub"

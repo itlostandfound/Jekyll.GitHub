@@ -1,4 +1,4 @@
-/* Box of Hammers — Critchlow-inspired left-sidebar layout with dark/light toggle */
+/* Critchlow-inspired left-sidebar layout with dark/light toggle */
 
 /* ─── Theme Variables ─── */
 :root {
@@ -59,6 +59,7 @@ h1, h2, h3, h4 { color: var(--text-heading); font-weight: 600; }
   top: 0;
   background: var(--bg-sidebar);
   border-right: 1px solid var(--sidebar-border);
+  border-top: 3px solid var(--accent);
   display: flex;
   flex-direction: column;
   padding: 2rem 1.25rem 1.5rem;
@@ -128,7 +129,7 @@ h1, h2, h3, h4 { color: var(--text-heading); font-weight: 600; }
   margin-bottom: .1rem;
 }
 
-.sidebar-group.open .sidebar-children {
+.sidebar-group.open > .sidebar-children {
   display: flex;
   flex-direction: column;
   gap: .1rem;
@@ -198,12 +199,16 @@ h1, h2, h3, h4 { color: var(--text-heading); font-weight: 600; }
   font-size: 2.2rem;
   letter-spacing: -.03em;
   margin-bottom: .5rem;
+  background: linear-gradient(135deg, var(--text-heading) 20%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero .tagline {
   font-size: 1.05rem;
   color: var(--text-muted);
-  max-width: 560px;
+  white-space: nowrap;
   line-height: 1.65;
 }
 
@@ -216,7 +221,9 @@ h1, h2, h3, h4 { color: var(--text-heading); font-weight: 600; }
   letter-spacing: .08em;
   margin: 2.5rem 0 .75rem;
   padding-bottom: .4rem;
+  padding-left: .6rem;
   border-bottom: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
 }
 
 /* ── Nested sub-nav ── */
@@ -471,7 +478,572 @@ h1, h2, h3, h4 { color: var(--text-heading); font-weight: 600; }
   }
 
   .hero h1 { font-size: 1.6rem; }
+  .hero .tagline { white-space: normal; font-size: .92rem; }
   .writing-list li { flex-direction: column; gap: .1rem; }
   .project-grid { grid-template-columns: 1fr; }
   .subpage-list { grid-template-columns: 1fr; }
+  .tech-logos { gap: 1rem 1.25rem; padding: .85rem 1rem; }
+  .tech-logo img { width: 26px; height: 26px; }
+}
+
+/* ─── Tech Stack Logo Strip ─── */
+.tech-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  padding: 1.1rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin: 1.5rem 0 0;
+}
+
+.tech-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  opacity: .6;
+  transition: opacity .2s, transform .2s;
+}
+
+.tech-logo:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.tech-logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  /* dark mode: SVGs are black by default — invert to white */
+  filter: brightness(0) invert(1);
+}
+
+[data-theme="light"] .tech-logo img {
+  /* light mode: keep dark */
+  filter: brightness(0) opacity(.75);
+}
+
+[data-theme="light"] .beyond-badge {
+  background: rgba(9, 105, 218, .08);
+  border-color: rgba(9, 105, 218, .2);
+}
+
+.tech-logo span {
+  font-size: .67rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+/* Text-only fallback when CDN image 404s */
+.tech-logo.no-img {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: .35rem .65rem;
+  opacity: .7;
+}
+
+.tech-logo.no-img span {
+  font-size: .78rem;
+  color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════════
+   ABOUT / RESUME PAGE STYLES
+   ═══════════════════════════════════════════════ */
+
+/* ─── Hero ─── */
+.resume-hero {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.resume-name {
+  font-size: 2.4rem;
+  letter-spacing: -.03em;
+  margin-bottom: .35rem;
+  background: linear-gradient(135deg, var(--text-heading) 20%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.resume-tagline {
+  font-size: 1.05rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: .85rem;
+  line-height: 1.5;
+}
+
+.resume-summary {
+  font-size: .95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 72ch;
+}
+
+/* Hero "beyond" block needs top margin inside hero */
+.resume-hero .job-beyond {
+  margin-top: 1.25rem;
+}
+
+/* ─── Section wrapper ─── */
+.resume-section {
+  margin-bottom: 2.5rem;
+}
+
+/* ─── Skills Grid ─── */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: .5rem;
+}
+
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.skill-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 12px rgba(0,0,0,.15);
+}
+
+.skill-card--beyond {
+  border-style: dashed;
+}
+
+.skill-card--beyond:hover {
+  border-color: var(--accent);
+  border-style: dashed;
+  box-shadow: 0 2px 12px rgba(0,0,0,.15);
+}
+
+.beyond-badge {
+  display: inline-block;
+  font-size: .62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--accent);
+  background: rgba(88, 166, 255, .08);
+  border: 1px solid rgba(88, 166, 255, .2);
+  border-radius: 4px;
+  padding: .1rem .35rem;
+  margin-left: .4rem;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.skill-card h3 {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0 0 .5rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-card li {
+  font-size: .85rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  padding: .15rem 0;
+  position: relative;
+  padding-left: .85rem;
+}
+
+.skill-card li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ─── Highlights ─── */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: .5rem;
+}
+
+.highlight-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  gap: .85rem;
+  align-items: flex-start;
+  transition: border-color .2s;
+}
+
+.highlight-card:hover {
+  border-color: var(--accent);
+}
+
+.highlight-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+
+.highlight-card p {
+  font-size: .88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.highlight-card strong {
+  color: var(--text-heading);
+}
+
+/* ─── Job Entries ─── */
+.job-entry {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.job-entry:last-of-type {
+  border-bottom: none;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: .6rem;
+}
+
+.job-header h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.job-role {
+  font-size: .88rem;
+  color: var(--accent);
+  margin: .1rem 0 0;
+  font-weight: 500;
+}
+
+.job-contractor {
+  font-size: .82rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.job-dates {
+  font-size: .82rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding-top: .25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.job-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.job-details li {
+  font-size: .88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding: .2rem 0 .2rem 1rem;
+  position: relative;
+}
+
+.job-details li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .65rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+/* ─── Job "What the resume doesn't say" Block ─── */
+.job-beyond {
+  margin-top: 1rem;
+  padding: .85rem 1.1rem;
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+}
+
+.job-beyond-label {
+  display: block;
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: .35rem;
+}
+
+.job-beyond p {
+  font-size: .85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.job-beyond em {
+  color: var(--text);
+  font-style: italic;
+}
+
+/* ─── Earlier Roles Table ─── */
+.job-earlier {
+  margin-top: 1rem;
+}
+
+.job-earlier h3 {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 0 0 .75rem;
+}
+
+.job-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.job-table td {
+  font-size: .85rem;
+  color: var(--text-muted);
+  padding: .45rem .75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: baseline;
+}
+
+.job-table tr:last-child td {
+  border-bottom: none;
+}
+
+.job-table .job-company {
+  color: var(--text-heading);
+  font-weight: 500;
+  width: 42%;
+}
+
+.job-table .job-role-sm {
+  width: 40%;
+}
+
+.job-table .job-date-sm {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--text-muted);
+  opacity: .7;
+}
+
+/* ─── Certification Grid ─── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: .5rem;
+}
+
+.cert-group h3 {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 0 0 .6rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cert-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cert-group li {
+  font-size: .82rem;
+  color: var(--text-muted);
+  padding: .3rem 0;
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .75rem;
+  white-space: nowrap;
+}
+
+.cert-year {
+  font-size: .75rem;
+  color: var(--text-muted);
+  opacity: .55;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  margin-left: auto;
+  padding-left: .5rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .cert-group li {
+    white-space: normal;
+  }
+  .cert-year {
+    white-space: nowrap;
+  }
+}
+
+/* ─── Beyond the Resume Divider ─── */
+.beyond-divider {
+  text-align: center;
+  margin: 3rem 0 2rem;
+  position: relative;
+}
+
+.beyond-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--border);
+}
+
+.beyond-divider span {
+  position: relative;
+  background: var(--bg);
+  padding: 0 1.5rem;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+/* ─── Beyond Cards ─── */
+.beyond-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: .5rem;
+}
+
+.beyond-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.35rem;
+  transition: border-color .2s, box-shadow .2s, transform .15s;
+}
+
+.beyond-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  transform: translateY(-2px);
+}
+
+.beyond-card h3 {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0 0 .5rem;
+}
+
+.beyond-card p {
+  font-size: .85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.beyond-card em {
+  color: var(--text);
+  font-style: italic;
+}
+
+/* ─── Philosophy Block ─── */
+.philosophy-block {
+  margin-top: .5rem;
+}
+
+.philosophy-block blockquote {
+  border-left: 3px solid var(--accent);
+  padding: .75rem 1.25rem;
+  margin: 0 0 1rem;
+  background: var(--bg-card);
+  border-radius: 0 6px 6px 0;
+}
+
+.philosophy-block blockquote p {
+  font-size: .95rem;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.philosophy-block > p {
+  font-size: .9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ─── Responsive: About page ─── */
+@media (max-width: 768px) {
+  .resume-name {
+    font-size: 1.8rem;
+  }
+  .resume-tagline {
+    font-size: .92rem;
+  }
+  .job-header {
+    flex-direction: column;
+    gap: .2rem;
+  }
+  .job-dates {
+    padding-top: 0;
+  }
+  .skill-grid,
+  .highlights-grid,
+  .beyond-grid {
+    grid-template-columns: 1fr;
+  }
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
 }

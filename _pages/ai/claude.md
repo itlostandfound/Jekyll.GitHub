@@ -4,21 +4,23 @@ title: Claude Code
 permalink: /ai/claude/
 ---
 
-## Claude Code
-
 Anthropic's agentic coding tool. Runs in the terminal, reads your repo, and writes code with full context awareness.
 
-### How I Use It
-
-- **Code generation** — Scaffolding, refactoring, and test writing
-- **Repo exploration** — Understanding unfamiliar codebases
-- **Debugging** — Reading stack traces and proposing fixes
-- **Git workflows** — PR descriptions, commit messages, code review
-
-### In the Lab
-
-Running alongside Hermes as part of a multi-agent setup. Different tools for different jobs — Hermes for orchestration and automation, Claude Code for deep code work.
-
-### Coming Soon
-
-Comparison with other coding agents, workflow integration patterns, and tips for getting the most out of agentic coding.
+<div class="subpage-list">
+  <a href="{{ '/ai/claude/global-claude-md/' | relative_url }}" class="subpage-card">
+    <h3>Global claude.md</h3>
+    <p>Project-level startup instructions and conventions</p>
+  </a>
+  <a href="{{ '/ai/claude/settings-json/' | relative_url }}" class="subpage-card">
+    <h3>settings.json</h3>
+    <p>Model selection, tool permissions, and runtime behavior</p>
+  </a>
+  <a href="{{ '/ai/claude/skills/' | relative_url }}" class="subpage-card">
+    <h3>Skills</h3>
+    <p>Reusable, composable instruction packs loaded on demand</p>
+  </a>
+  <a href="{{ '/ai/claude/local-claude-md/' | relative_url }}" class="subpage-card">
+    <h3>Local claude.md</h3>
+    <p>Directory-scoped instructions with inheritance</p>
+  </a>
+</div>

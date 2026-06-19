@@ -6,15 +6,15 @@ permalink: /about/
 
 <div class="resume-hero">
   <h1 class="resume-name">Michael Yates</h1>
-  <p class="resume-tagline">F5 ADC Security Engineer &nbsp;·&nbsp; Infrastructure Architect &nbsp;·&nbsp; Automation Builder</p>
+  <p class="resume-tagline">Infrastructure Architect &nbsp;·&nbsp; Automation Engineer &nbsp;·&nbsp; AI Builder</p>
   <p class="resume-summary">Organized and motivated team player delivering valuable technology solutions and best practices for information assets, maximizing organization-wide productivity, and driving profitability. 20+ years across Unix systems, enterprise networking, load balancing, application security, and automation.</p>
   <div class="job-beyond">
     <span class="job-beyond-label">What the resume doesn't say:</span>
-    <p>I've been doing this long enough to remember when F5 ran on v9 with exposure to v3, and I've stuck around because the problems only got more interesting, not less. I'd rather spend the time automating myself out of a task than do it manually twice, because automation equals accuracy, and speed is the byproduct.<br />
+    <p>I've been doing infrastructure long enough to remember when F5 ran on v9, and the problems only got more interesting, not less. 20+ years of keeping things running taught me how systems fail, how to automate the fixes, and how to build so the 2 AM call never comes. The next set of problems — AI orchestration, agent pipelines, LLM-driven runbooks — is where that experience compounds.<br />
     <br />
-    I believe the best infrastructure is the kind nobody notices because it just works. The skillsets beyond my resume are an investment in myself, my future, and my ability to provide value.<br />
+    I believe the best infrastructure is the kind nobody notices because it just works. The skills beyond my resume aren't side projects — they're the direction I'm building toward.<br />
     <br />
-    AI orchestration, self-hosted infrastructure, LLM Wiki Brains, LLM Runbooks, automation I build because I'd rather script than repeat aren't hobbies. They're the direction I'm moving. 20+ years keeping things running, and I'm just getting started on what comes next.</p>
+    Self-hosted infrastructure that actually stays up, automation I build because I'd rather script than repeat, AI agents that turn knowledge into action — the compound leverage is real. Twenty years of infrastructure experience is the foundation, not the ceiling.</p>
   </div>
 </div>
 
@@ -30,6 +30,7 @@ permalink: /about/
         <li>BIG-IP v9.x.x – v17.x.x</li>
         <li>TMOS iRules (TCL), TMSH, iCall</li>
         <li>F5 ASM/WAF, DCS/XC, SHAPE</li>
+        <li>VIPRION, iSeries, rSeries, VE</li>
       </ul>
     </div>
 
@@ -41,6 +42,9 @@ permalink: /about/
         <li>Information Security, Risk Management</li>
         <li>TLS/SSL Cipher Suite Analysis</li>
         <li>TLS/SSL Security Assessment</li>
+        <span class="beyond-badge">Not on the resume</span>
+        <li>Let's Encrypt + ACME Certificate Automation (Traefik)</li>
+        <li>SSL/TLS Termination & End-to-End Encryption</li>
       </ul>
     </div>
 
@@ -63,6 +67,10 @@ permalink: /about/
         <li>UNIX BIND, Domain Management</li>
         <li>Multi-tier Network Architectures</li>
         <li>Network Segmentation / VLAN Management</li>
+        <span class="beyond-badge">Not on the resume</span>
+        <li>Cloudflare DNS Management</li>
+        <li>Dynamic DNS</li>
+        <li>UniFi DNS / AdGuard Hybrid</li>
       </ul>
     </div>
 
@@ -70,11 +78,15 @@ permalink: /about/
       <h3>Systems & Infrastructure</h3>
       <ul>
         <li>Solaris, IBM AIX, Linux, Windows, Mac</li>
-        <li>Disaster Recovery, System Monitoring</li>
+        <li>Disaster Recovery & System Monitoring</li>
         <span class="beyond-badge">Not on the resume</span>
-        <li>Docker & Docker Networking</li>
-        <li>ProxMox, pfSense, Unifi, TrueNAS</li>
-        
+        <li>Proxmox VE Cluster (Virtualization & HA)</li>
+        <li>pfSense Firewall & VPN Gateway (Retired)</li>
+        <li>UniFi Network Management</li>
+        <li>TrueNAS ZFS Storage & Snapshots</li>
+        <li>Automated Backup Strategies & Testing</li>
+        <li>SMB/NFS Share Management</li>
+        <li>Offsite Replication & Disaster Recovery</li>
       </ul>
     </div>
 
@@ -84,38 +96,37 @@ permalink: /about/
         <li>HTTP Debugging, TCP Dump Analysis</li>
         <li>Wireshark</li>
         <li>Web Administration & Support</li>
-        <li>Let's Encrypt, Self-Hosting, Open Source</li>
+        <li>Self-Hosting, Open Source</li>
       </ul>
     </div>
 
     <div class="skill-card skill-card--beyond">
-      <h3>Home Lab & Homelab Infra <span class="beyond-badge">Not on the resume</span></h3>
+      <h3>Home Lab & Self-Hosted Infrastructure <span class="beyond-badge">Not on the resume</span></h3>
       <ul>
-        <li>Proxmox VE Cluster (Virtualization & HA)</li>
         <li>Docker & Docker Compose Orchestration</li>
         <li>Traefik Reverse Proxy & Dynamic Routing</li>
         <!-- <li>GitHub Actions & CI/CD Pipelines</li> - In-Progress for Created Application Publications -->
         <li>Jekyll Static Site Generation & GitHub Pages</li>
         <li>NGINX Web Server Administration</li>
-      </ul>
-    </div>
-
-    <div class="skill-card skill-card--beyond">
-      <h3>Self-Hosted Services <span class="beyond-badge">Not on the resume</span></h3>
-      <ul>
-        <li>Hermes AI Agent Orchestration (Multi-LLM)</li>
         <li>Forgejo Self-Hosted Git Repo</li>
-        <!-- <li>Tailscale Mesh VPN</li> - Future Project - Roadmapped -->
         <li>Uptime Kuma Monitoring & Alerting</li>
-        <li>pfSense Firewall & VPN Gateway (Retired)</li>
-        <li>UniFi Network Management</li>
-        <li>UniFi DNS / AdGuard Hybrid</li>
       </ul>
     </div>
 
     <div class="skill-card skill-card--beyond">
-      <h3>AI & Automation Tooling <span class="beyond-badge">Not on the resume</span></h3>
+      <h3>Container Orchestration <span class="beyond-badge">Not on the resume</span></h3>
       <ul>
+        <li>K3s Lightweight Kubernetes (Pending Lab Redesign)</li>
+        <!-- <li>Helm Charts & Manifest Management</li> - Pending Lab Redesign -->
+        <li>Container Networking</li>
+        <li>Persistent Storage & Stateful Workloads</li>
+      </ul>
+    </div>
+
+    <div class="skill-card skill-card--beyond">
+      <h3>AI & Agent Orchestration <span class="beyond-badge">Not on the resume</span></h3>
+      <ul>
+        <li>Hermes Agent Orchestration (Multi-LLM)</li>
         <li>Claude Code, Local LLMs (Ollama & LM Studio)</li>
         <li>AI Agent Development & Prompt Engineering</li>
         <!-- <li>Python API Integrations & Scripting</li> - Lightly Used, but Future Planning for Custom Hermes and Claude Dashboard -->
@@ -123,36 +134,6 @@ permalink: /about/
         <li>Automated Cron Jobs & Watchdog Pipelines</li>
         <li>Structured Output & JSON Schema Workflows</li>
         <li>AI Memory & Token Efficiency Obsession</li>
-      </ul>
-    </div>
-
-    <div class="skill-card skill-card--beyond">
-      <h3>Storage & Backup <span class="beyond-badge">Not on the resume</span></h3>
-      <ul>
-        <li>TrueNAS ZFS Storage & Snapshots</li>
-        <li>Automated Backup Strategies & Testing</li>
-        <li>SMB/NFS Share Management</li>
-        <li>Offsite Replication & Disaster Recovery</li>
-      </ul>
-    </div>
-
-    <div class="skill-card skill-card--beyond">
-      <h3>DNS & TLS Automation <span class="beyond-badge">Not on the resume</span></h3>
-      <ul>
-        <li>Let's Encrypt + ACME Certificate Automation (Traefik)</li>
-        <li>Cloudflare DNS Management</li>
-        <li>Dynamic DNS</li>
-        <li>SSL/TLS Termination & End-to-End Encryption</li>
-      </ul>
-    </div>
-
-    <div class="skill-card skill-card--beyond">
-      <h3>Docker, Kubernetes, & Container Orchestration <span class="beyond-badge">Not on the resume</span></h3>
-      <ul>
-        <li>K3s Lightweight Kubernetes (Pending Lab Redsign)</li>
-        <!-- <li>Helm Charts & Manifest Management</li> - Pending Lab Redsign -->
-        <li>Container Networking</li>
-        <li>Persistent Storage & Stateful Workloads</li>
       </ul>
     </div>
 
@@ -222,9 +203,13 @@ permalink: /about/
     </ul>
     <div class="job-beyond">
       <span class="job-beyond-label">What the resume doesn't say:</span>
-      <p>WorldTech IT (WTIT) — Austin, TX | Founded 2012. F5 VAR and MSP that specialized solely in F5 Networks technologies (BIG-IP, SHAPE, XC) before expanding into Arista and Palo Alto product lines. The back-to-back F5 North America Partner of the Year (2024) and Innovation Partner of the Year (2025) awards, Platinum and Guardian Unity partner status, the growth in partner-initiated deals could be called a sales story, but if your reputation for quality service didn't back it you wouldn't be making the sales. It's what happens when you put experienced, F5-certified US-based engineers in front of customers who need problems solved, not pitch decks. The Cloud.Red platform, the managed services, the resell motion — those are delivery vehicles. The talent pool is the engine. Everything else wraps around it.<br />
+      <p>The resume says F5 engineer. What it doesn't capture is everything I built outside that scope during the same six years. While working across dozens of clients, context-switching between WAF tuning, root-cause analysis, device upgrades, platform migrations, and configuration audits at breakneck speed. I was also building a full-stack home infrastructure from the ground up.<br />
       <br />
-      Working across dozens of clients means context-switching at breakneck speed, jumping from a WAF tuning session for one customer to a root-cause analysis for another, sometimes in the same hour. You carry environments in your head that you didn't build, ramp on unfamiliar infrastructures fast, earn trust with new teams quickly, and still deliver clean, documented solutions under SLA pressure.  It is fast paced, but the things you see and learn more often than not solve problems for more than one Client and that kind of exposier is virtually impossible to replace or replicate.</p>
+      Proxmox Virtualization and Backup Systems with Email Reports. Learning pfSense firewall with VLAN segmentation and VPN gateways (then retiring it for UniFi). TrueNAS ZFS storage with automated snapshots. Self-hosted DNS via UniFi and AdGuard. Traefik reverse proxy with Let's Encrypt ACME automation. Docker orchestration, Forgejo git, Uptime Kuma monitoring, NGINX — all running, all maintained, all battle-tested.<br />
+      <br />
+      And then came AI. Running Hermes Agent for multi-LLM orchestration. Running and then Retiring Agent-Zero. Tinkering with NemoClaw. Testing Cursor before switching to Claude Code for development. Local LLMs through Ollama and LM Studio. Kanban-driven agent pipelines, automated cron watchdogs, structured output workflows. These are not experiments they are production systems I rely on daily.<br />
+      <br />
+      Six years at WTIT taught me how to carry unfamiliar environments in my head, ramp fast, and deliver under pressure. The lab taught me how to build what comes next and to invest in myself.</p>
     </div>
   </div>
 

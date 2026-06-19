@@ -7,14 +7,10 @@ permalink: /about/
 <div class="resume-hero">
   <h1 class="resume-name">Michael Yates</h1>
   <p class="resume-tagline">Infrastructure Architect &nbsp;·&nbsp; Automation Engineer &nbsp;·&nbsp; AI Builder</p>
-  <p class="resume-summary">Organized and motivated team player delivering valuable technology solutions and best practices for information assets, maximizing organization-wide productivity, and driving profitability. 20+ years across Unix systems, enterprise networking, load balancing, application security, and automation.</p>
+  <p class="resume-summary">20+ years across Unix systems, enterprise networking, load balancing, application security, and automation. Now building toward AI orchestration and agent-driven infrastructure — not as a pivot, but as a compounding of everything that came before.</p>
   <div class="job-beyond">
     <span class="job-beyond-label">What the resume doesn't say:</span>
-    <p>I've been doing infrastructure long enough to remember when F5 ran on v9, and the problems only got more interesting, not less. 20+ years of keeping things running taught me how systems fail, how to automate the fixes, and how to build so the 2 AM call never comes. The next set of problems — AI orchestration, agent pipelines, LLM-driven runbooks — is where that experience compounds.<br />
-    <br />
-    I believe the best infrastructure is the kind nobody notices because it just works. The skills beyond my resume aren't side projects — they're the direction I'm building toward.<br />
-    <br />
-    Self-hosted infrastructure that actually stays up, automation I build because I'd rather script than repeat, AI agents that turn knowledge into action — the compound leverage is real. Twenty years of infrastructure experience is the foundation, not the ceiling.</p>
+    <p>I've been doing infrastructure long enough to remember when F5 ran on v9. The skills beyond my resume aren't side projects — they're the direction I'm building toward. Keep scrolling.</p>
   </div>
 </div>
 
@@ -203,11 +199,11 @@ permalink: /about/
     </ul>
     <div class="job-beyond">
       <span class="job-beyond-label">What the resume doesn't say:</span>
-      <p>The resume says F5 engineer. What it doesn't capture is everything I built outside that scope during the same six years. While working across dozens of clients, context-switching between WAF tuning, root-cause analysis, device upgrades, platform migrations, and configuration audits at breakneck speed. I was also building a full-stack home infrastructure from the ground up.<br />
+      <p>The resume says F5 engineer. What it doesn't capture is everything I built outside that scope during the same six years. While working across dozens of clients — context-switching between WAF tuning, root-cause analysis, device upgrades, platform migrations, and configuration audits at breakneck speed — I was also building a full-stack home infrastructure from the ground up.<br />
       <br />
       Proxmox Virtualization and Backup Systems with Email Reports. Learning pfSense firewall with VLAN segmentation and VPN gateways (then retiring it for UniFi). TrueNAS ZFS storage with automated snapshots. Self-hosted DNS via UniFi and AdGuard. Traefik reverse proxy with Let's Encrypt ACME automation. Docker orchestration, Forgejo git, Uptime Kuma monitoring, NGINX — all running, all maintained, all battle-tested.<br />
       <br />
-      And then came AI. Running Hermes Agent for multi-LLM orchestration. Running and then Retiring Agent-Zero. Tinkering with NemoClaw. Testing Cursor before switching to Claude Code for development. Local LLMs through Ollama and LM Studio. Kanban-driven agent pipelines, automated cron watchdogs, structured output workflows. These are not experiments they are production systems I rely on daily.<br />
+      And then came AI. Running Hermes Agent for multi-LLM orchestration. Running and then Retiring Agent-Zero. Tinkering with NemoClaw. Testing Cursor before switching to Claude Code for development. Local LLMs through Ollama and LM Studio. Kanban-driven agent pipelines, automated cron watchdogs, structured output workflows. These aren't experiments — they are production systems I rely on daily.<br />
       <br />
       Six years at WTIT taught me how to carry unfamiliar environments in my head, ramp fast, and deliver under pressure. The lab taught me how to build what comes next and to invest in myself.</p>
     </div>
@@ -265,7 +261,7 @@ permalink: /about/
         </tr>
         <tr>
           <td class="job-company">Ally Financial Services</td>
-          <td class="job-role-sm">Senior Web Systems Engineer</td>
+          <td class="job-role-sm">Senior Web Systems Engineer / F5 Engineer</td>
           <td class="job-date-sm">2008 – 2013</td>
         </tr>
         <tr>
@@ -364,12 +360,12 @@ permalink: /about/
 
     <div class="beyond-card">
       <h3>🛠️ Home Lab Architect</h3>
-      <p>I run a proper home lab — not a toy. ProxMox virtualization cluster, TrueNAS storage, pfSense firewall, Unifi networking, Docker orchestration, and a growing collection of self-hosted services. If it can be automated, I automate it. If it can be containerized, I containerize it. The lab is my proving ground for ideas before they touch production.</p>
+      <p>I run a proper home lab — not a toy. If it can be automated, I automate it. If it can be containerized, I containerize it. The lab is my proving ground: I learn by building, I break things on my own gear first, and what survives goes into production. That's how I got from F5 iRules to Traefik reverse proxies, from CLI scripting to agent-driven automation.</p>
     </div>
 
     <div class="beyond-card">
       <h3>🤖 AI & Agent Orchestration</h3>
-      <p>I build with AI agents — not as a curiosity, but as force multiplication. Running Hermes Agent for task orchestration, Claude Code for development, and custom tooling that ties LLMs into real infrastructure workflows. The goal isn't replacing humans; it's eliminating the boring parts so engineers can focus on hard problems.</p>
+      <p>I build with AI agents — not as a curiosity, but as force multiplication. Twenty years of infrastructure means I know what needs automating and what needs a human in the loop. AI agents close that gap: they handle the repetitive execution, I handle the architecture and judgment. The compound leverage is real — and it's where this career is going.</p>
     </div>
 
     <div class="beyond-card">
@@ -410,7 +406,7 @@ permalink: /about/
   <p>This isn't a resume. A resume tells you what someone did. This page exists to show you what someone is capable of becoming.</p>
   <p>I've spent over two decades keeping other people's infrastructure running — load balancers, routers, switches, application delivery, the critical path that nobody notices until it breaks. I'm good at it. I still love it. But the IT landscape doesn't stand still, and neither do I.</p>
   <p>The skillsets on this page that aren't on my resume — the AI orchestration, the agent pipelines, the self-hosted infrastructure, the automation I build because I'd rather spend Saturday scripting than doing the same task twice — those aren't hobbies. They're proof of motion. They're the direction I'm moving.</p>
-  <p>I'm excited about AI. Not in the hype-cycle waybut in the "I'm building with it every day and I see what it can actually do" way. I see AI as a genuine opportunity to do work that's different, meaningful, and productive. Work that compounds. If this page puts that in front of the right people, it was worth every hour.</p>
+  <p>I'm excited about AI. Not in the hype-cycle way, but in the "I'm building with it every day and I see what it can actually do" way. I see AI as a genuine opportunity to do work that's different, meaningful, and productive. Work that compounds. If this page puts that in front of the right people, it was worth every hour.</p>
   <br />
   <p>Built with Jekyll. Dark theme by default because staring at white backgrounds is a crime.</p>
 </div>

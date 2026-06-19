@@ -17,10 +17,14 @@ Running everything through a single agent creates cross-contamination: a Playgro
 | Profile | Purpose | Model | Key Toolsets |
 |---|---|---|---|
 | `default` | General CLI conversations, daily tasks | GLM-5.1 (Ollama Cloud) | Full set |
-| `playground` | NGINX site management, Royal Scribe persona | GLM-5.1 | terminal, file, web |
-| `pmo` | Kanban orchestrator, task dispatch | GLM-5.1 | kanban, terminal, delegation |
-| `research` | Deep research, market analysis | GLM-5.1 | web, browser, terminal |
-| `dev` | Code engineering, git workflows | GLM-5.1 | terminal, file, github, messaging |
+| `development` | Software engineering, git workflows, CI/CD | Kimi K2.6 (Ollama Cloud) | terminal, file, skills, github, messaging |
+| `f5-admin` | F5 BIG-IP platform administration, system config, cross-module coordination | Kimi K2.6 (Ollama Cloud) | terminal, file, skills, github |
+| `f5-asm` | F5 ASM — WAF, security policies, attack prevention, bot detection | Kimi K2.6 (Ollama Cloud) | terminal, file, skills, github |
+| `f5-gtm` | F5 GTM/DNS — global load balancing, failover, geographic routing | Kimi K2.6 (Ollama Cloud) | terminal, file, skills, github |
+| `f5-ltm` | F5 LTM — virtual servers, pools, iRules, SSL/TLS, traffic optimization | Kimi K2.6 (Ollama Cloud) | terminal, file, skills, github |
+| `playground` | NGINX site content, Royal Scribe persona | Kimi K2.6 (Ollama Cloud) | terminal, file, web, skills |
+| `pmo` | Kanban orchestrator, task dispatch | Qwen3-8B (LM Studio local) | kanban, delegation, terminal |
+| `research` | Deep research, market analysis, competitive intelligence | MiniMax-M2.7 (Ollama Cloud) | terminal, file, web, skills |
 
 ### How It Works
 
@@ -31,6 +35,10 @@ Each profile lives under `~/.hermes/profiles/<name>/` and contains:
 - **`skills/`** — Profile-specific skills loaded via `skills.external_dirs` in config.yaml
 - **`memories/`** — Isolated memory bank with its own `bank_id`
 - **`cron/`** — Profile-scoped cron job artifacts (though the global scheduler is the source of truth)
+
+### Profile Families
+
+The four F5 profiles (`f5-admin`, `f5-ltm`, `f5-asm`, `f5-gtm`) share the same toolsets and the `f5-engineer-skills` skill directory, but diverge in their SOUL.md persona — each is a domain specialist with focused expertise. `f5-admin` acts as the cross-module coordinator, dispatching to the LTM/ASM/GTM specialists when a task falls within their domain.
 
 ### Key Decisions
 

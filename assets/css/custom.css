@@ -586,7 +586,8 @@ h1, h2, h3, h4 { color: var(--text-heading); font-weight: 600; }
   font-size: .95rem;
   color: var(--text-muted);
   line-height: 1.65;
-  max-width: 72ch;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Hero "beyond" block needs top margin inside hero */
@@ -1077,5 +1078,113 @@ h1, h2, h3, h4 { color: var(--text-heading); font-weight: 600; }
   }
   .cert-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   TAG CLOUD / CATEGORY FILTER (Blog page)
+   ═══════════════════════════════════════════════ */
+
+.tag-filter {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tag-filter-label {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  display: block;
+  margin-bottom: .6rem;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+.tag-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .3rem .7rem;
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: color .15s, border-color .15s, background .15s;
+  font-family: inherit;
+}
+
+.tag-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.tag-btn-active {
+  color: var(--text-heading) !important;
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+[data-theme="light"] .tag-btn-active {
+  color: #fff !important;
+}
+
+.tag-btn-active .tag-count {
+  color: rgba(255,255,255,.8);
+}
+
+[data-theme="light"] .tag-btn-active .tag-count {
+  color: rgba(255,255,255,.85);
+}
+
+.tag-count {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  opacity: .6;
+}
+
+.tag-clear-btn {
+  display: inline-block;
+  margin-top: .5rem;
+  padding: .25rem .6rem;
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+  font-family: inherit;
+}
+
+.tag-clear-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Post items hidden/shown by tag filter */
+.writing-list li.tag-hidden {
+  display: none !important;
+}
+
+/* Responsive: tag cloud on mobile */
+@media (max-width: 768px) {
+  .tag-cloud {
+    gap: .35rem;
+  }
+  .tag-btn {
+    font-size: .76rem;
+    padding: .25rem .55rem;
   }
 }

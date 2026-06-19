@@ -38,8 +38,8 @@
       <a href="{{ '/projects/' | relative_url }}" class="sidebar-link {% if page.url contains '/projects' %}active{% endif %}">Projects</a>
 
       <!-- F5 sub-nav -->
-      <div class="sidebar-group {% if page.url contains '/f5' %}open{% endif %}">
-        <a href="{{ '/f5/' | relative_url }}" class="sidebar-link sidebar-parent {% if page.url contains '/f5' %}active{% endif %}">F5 Networks</a>
+      <div class="sidebar-group {% unless page.url contains '/projects/' %}{% if page.url contains '/f5/' %}open{% endif %}{% endunless %}">
+        <a href="{{ '/f5/' | relative_url }}" class="sidebar-link sidebar-parent {% unless page.url contains '/projects/' %}{% if page.url contains '/f5/' %}active{% endif %}{% endunless %}">F5 Networks</a>
         <div class="sidebar-children">
           <a href="{{ '/f5/ltm/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/f5/ltm/' %}active{% endif %}">LTM</a>
           <a href="{{ '/f5/gtm/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/f5/gtm/' %}active{% endif %}">GTM/DNS</a>
@@ -49,11 +49,11 @@
       </div>
 
       <!-- AI sub-nav -->
-      <div class="sidebar-group {% if page.url contains '/ai' %}open{% endif %}">
-        <a href="{{ '/ai/' | relative_url }}" class="sidebar-link sidebar-parent {% if page.url contains '/ai' %}active{% endif %}">AI</a>
+      <div class="sidebar-group {% unless page.url contains '/projects/' %}{% if page.url contains '/ai/' %}open{% endif %}{% endunless %}">
+        <a href="{{ '/ai/' | relative_url }}" class="sidebar-link sidebar-parent {% unless page.url contains '/projects/' %}{% if page.url contains '/ai/' %}active{% endif %}{% endunless %}">AI</a>
         <div class="sidebar-children">
-          <div class="sidebar-group {% if page.url contains '/ai/hermes' %}open{% endif %}">
-            <a href="{{ '/ai/hermes/' | relative_url }}" class="sidebar-link sidebar-parent sidebar-child {% if page.url contains '/ai/hermes' %}active{% endif %}">Hermes</a>
+          <div class="sidebar-group {% unless page.url contains '/projects/' %}{% if page.url contains '/ai/hermes' %}open{% endif %}{% endunless %}">
+            <a href="{{ '/ai/hermes/' | relative_url }}" class="sidebar-link sidebar-parent sidebar-child {% unless page.url contains '/projects/' %}{% if page.url contains '/ai/hermes' %}active{% endif %}{% endunless %}">Hermes</a>
             <div class="sidebar-children sidebar-nested">
               <a href="{{ '/ai/hermes/profiles/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/hermes/profiles/' %}active{% endif %}">Profiles</a>
               <a href="{{ '/ai/hermes/models/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/hermes/models/' %}active{% endif %}">Models</a>
@@ -63,9 +63,10 @@
               <a href="{{ '/ai/hermes/kanban/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/hermes/kanban/' %}active{% endif %}">Kanban</a>
             </div>
           </div>
-          <div class="sidebar-group {% if page.url contains '/ai/claude' %}open{% endif %}">
-            <a href="{{ '/ai/claude/' | relative_url }}" class="sidebar-link sidebar-parent sidebar-child {% if page.url contains '/ai/claude' %}active{% endif %}">Claude</a>
+          <div class="sidebar-group {% unless page.url contains '/projects/' %}{% if page.url contains '/ai/claude' %}open{% endif %}{% endunless %}">
+            <a href="{{ '/ai/claude/' | relative_url }}" class="sidebar-link sidebar-parent sidebar-child {% unless page.url contains '/projects/' %}{% if page.url contains '/ai/claude' %}active{% endif %}{% endunless %}">Claude</a>
             <div class="sidebar-children sidebar-nested">
+              <a href="{{ '/ai/claude/auto-mode/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/claude/auto-mode/' %}active{% endif %}">Auto-Mode</a>
               <a href="{{ '/ai/claude/global-claude-md/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/claude/global-claude-md/' %}active{% endif %}">Global claude.md</a>
               <a href="{{ '/ai/claude/settings-json/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/claude/settings-json/' %}active{% endif %}">settings.json</a>
               <a href="{{ '/ai/claude/skills/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/claude/skills/' %}active{% endif %}">Skills</a>

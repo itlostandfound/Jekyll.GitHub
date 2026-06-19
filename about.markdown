@@ -10,7 +10,7 @@ permalink: /about/
   <p class="resume-summary">Organized and motivated team player delivering valuable technology solutions and best practices for information assets, maximizing organization-wide productivity, and driving profitability. 20+ years across Unix systems, enterprise networking, load balancing, application security, and automation.</p>
   <div class="job-beyond">
     <span class="job-beyond-label">What the resume doesn't say:</span>
-    <p>I'm the engineer they call when the load balancer is dropping traffic and nobody can figure out why. I've been doing this long enough to remember when F5 ran on v9 with exposure to v3, and I'm still here because the problems got more interesting, not less. I'd rather spend the time automating myself out of a task than do it manually twice, because automation equals accuracy, and speed is the byproduct.<br />
+    <p>I've been doing this long enough to remember when F5 ran on v9 with exposure to v3, and I've stuck around because the problems only got more interesting, not less. I'd rather spend the time automating myself out of a task than do it manually twice, because automation equals accuracy, and speed is the byproduct.<br />
     <br />
     I believe the best infrastructure is the kind nobody notices because it just works. The skillsets beyond my resume are an investment in myself, my future, and my ability to provide value.<br />
     <br />
@@ -39,6 +39,8 @@ permalink: /about/
         <li>SSH, SSL/PKI Certificate Management</li>
         <li>Vulnerability Assessment & Mitigation</li>
         <li>Information Security, Risk Management</li>
+        <li>TLS/SSL Cipher Suite Analysis</li>
+        <li>TLS/SSL Security Assessment</li>
       </ul>
     </div>
 
@@ -48,7 +50,7 @@ permalink: /about/
         <li>BASH Scripting, Python</li>
         <li>C#, Microsoft Entity Framework</li>
         <li>F5 iControl REST API</li>
-        <li>Process Automation & Simulation</li>
+        <li>Process Automation</li>
         <li>BIG-IP Configuration Posture and Analysis</li>
       </ul>
     </div>
@@ -60,6 +62,7 @@ permalink: /about/
         <li>Cisco Routers & Switches</li>
         <li>UNIX BIND, Domain Management</li>
         <li>Multi-tier Network Architectures</li>
+        <li>Network Segmentation / VLAN Management</li>
       </ul>
     </div>
 
@@ -67,9 +70,11 @@ permalink: /about/
       <h3>Systems & Infrastructure</h3>
       <ul>
         <li>Solaris, IBM AIX, Linux, Windows, Mac</li>
+        <li>Disaster Recovery, System Monitoring</li>
+        <span class="beyond-badge">Not on the resume</span>
         <li>Docker & Docker Networking</li>
         <li>ProxMox, pfSense, Unifi, TrueNAS</li>
-        <li>Disaster Recovery, System Monitoring</li>
+        
       </ul>
     </div>
 
@@ -134,9 +139,9 @@ permalink: /about/
     <div class="skill-card skill-card--beyond">
       <h3>DNS & TLS Automation <span class="beyond-badge">Not on the resume</span></h3>
       <ul>
-        <li>Let's Encrypt + ACME Certificate Automation</li>
+        <li>Let's Encrypt + ACME Certificate Automation (Traefik)</li>
         <li>Cloudflare DNS Management</li>
-        <li>Dynamic DNS for Homelab Exposure</li>
+        <li>Dynamic DNS</li>
         <li>SSL/TLS Termination & End-to-End Encryption</li>
       </ul>
     </div>

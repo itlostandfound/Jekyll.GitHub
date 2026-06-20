@@ -42,7 +42,7 @@ The TMSH Wiki now serves as the gold-standard CLAUDE.md template for every other
 
 This post is an introduction. The complete project page has the full architecture, ingest sources, current state, access rules, and enhancement opportunities:
 
-**[TMSH LLM Wiki Brain →](/projects/ai/tmsh-wiki-brain/)**
+**[TMSH LLM Wiki Brain →]({{ site.baseurl }}/projects/ai/tmsh-wiki-brain/)**
 
 ---
 

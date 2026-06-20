@@ -51,7 +51,7 @@ The QKView Wiki has a sterility constraint that the TMSH Wiki doesn't. The TMSH 
 
 This post is an introduction. The complete project page has the full architecture, the Extractor layer breakdown, the Execute/Refine cycle, sterility rules, access rules, the creation timeline, and enhancement opportunities:
 
-**[QKView LLM Wiki Brain →](/projects/ai/qkview-runbook/)**
+**[QKView LLM Wiki Brain →]({{ site.baseurl }}/projects/ai/qkview-runbook/)**
 
 ---
 

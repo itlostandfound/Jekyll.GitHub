@@ -1,0 +1,49 @@
+  <script>
+    (function(){
+      // Theme toggle
+      var btn = document.getElementById('theme-toggle');
+      var root = document.documentElement;
+
+      function updateIcon(){
+        var t = root.getAttribute('data-theme');
+        btn.textContent = t === 'light' ? '🌙' : '☀️';
+      }
+      updateIcon();
+
+      btn.addEventListener('click', function(){
+        var cur = root.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('itlf-theme', next);
+        updateIcon();
+      });
+
+      // Mobile sidebar toggle
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebar-overlay');
+      var hamburger = document.getElementById('hamburger');
+
+      function openSidebar(){
+        sidebar.classList.add('open');
+        overlay.classList.add('visible');
+      }
+      function closeSidebar(){
+        sidebar.classList.remove('open');
+        overlay.classList.remove('visible');
+      }
+
+      hamburger.addEventListener('click', openSidebar);
+      overlay.addEventListener('click', closeSidebar);
+
+      // Sidebar dropdown toggle: click parent to expand/collapse children.
+      // Click toggles open/closed. Holding Shift (or Ctrl) navigates to the section page.
+      document.querySelectorAll('.sidebar-parent').forEach(function(parent){
+        parent.addEventListener('click', function(e){
+          var group = parent.closest('.sidebar-group');
+          if (!group) return;
+          group.classList.toggle('open');
+          e.preventDefault();
+        });
+      });
+    })();
+  </script>

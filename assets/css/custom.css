@@ -594,13 +594,13 @@ h1, h2, h3, h4 { color: var(--text-heading); font-weight: 600; }
   width: 32px;
   height: 32px;
   object-fit: contain;
-  /* dark mode: SVGs are black by default — invert to white */
-  filter: brightness(0) invert(1);
+  border-radius: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, .92);
 }
 
-[data-theme="light"] .tech-logo img {
-  /* light mode: keep dark */
-  filter: brightness(0) opacity(.75);
+[data-theme="dark"] .tech-logo img {
+  background: rgba(240, 240, 240, .92);
 }
 
 [data-theme="light"] .beyond-badge {
@@ -614,20 +614,6 @@ h1, h2, h3, h4 { color: var(--text-heading); font-weight: 600; }
   font-weight: 500;
   letter-spacing: .02em;
   white-space: nowrap;
-}
-
-/* Text-only fallback when CDN image 404s */
-.tech-logo.no-img {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: .35rem .65rem;
-  opacity: .7;
-}
-
-.tech-logo.no-img span {
-  font-size: .78rem;
-  color: var(--text-muted);
 }
 
 /* ═══════════════════════════════════════════════

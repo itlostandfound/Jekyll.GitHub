@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background: dark rounded square -->
+  <rect width="512" height="512" rx="96" fill="#141414"/>
+  <!-- Accent bar: subtle top highlight -->
+  <rect y="80" width="512" height="6" fill="#E4002B" opacity="0.9" rx="3"/>
+  <!-- IT monogram -->
+  <text x="256" y="340" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="260" font-weight="800" letter-spacing="-8" fill="#E8E8E8">IT</text>
+  <!-- LF subscript -->
+  <text x="400" y="400" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="72" font-weight="600" letter-spacing="2" fill="#E4002B" opacity="0.85">LF</text>
+</svg>

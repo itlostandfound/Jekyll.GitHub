@@ -4,6 +4,7 @@ name: "Michael Yates"
 description: "F5 ADC engineering, home lab, and automation adventures."
 url: "https://itlostandfound.github.io"
 baseurl: "/Jekyll.GitHub"
+permalink: /blog/:year/:month/:day/:title.html
 timezone: America/Chicago
 locale: "en-US"
 

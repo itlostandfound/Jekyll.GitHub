@@ -17,7 +17,7 @@ permalink: /projects/ai/qkview-runbook/
 
 <div class="resume-section">
   <h2 class="section-heading">Important Note on Availability</h2>
-  <p>This tool was built at work, for work. The actual QKView LLM Wiki repository — including all 20+ Python extractor scripts, the 72 wiki pages (and rising), the CLAUDE.md schema, and operational specifics that I will never be able to release. What I <em>can</em> provide is the complete design, architecture, operating model, and every lesson learned from building and running it — enough that someone following the same pattern against their own QKViews will arrive at the same result. The files referenced in the <strong>Source Documents</strong> section below are the full design record: the original concept essay, the analysis that adapted it, the complete design conversation transcript, and the working skill draft. Together they are a blueprint for replicating the entire system.</p>
+  <p>This tool was built at work, for work. The actual QKView LLM Wiki repository — including all 20+ Python extractor scripts, the 72 wiki pages (and rising), the CLAUDE.md schema, and operational specifics that I will never be able to release. What I <em>can</em> provide is the complete design, architecture, operating model, and every lesson learned from building and running it — enough that someone following the same pattern against their own QKViews will arrive at the same result.</p>
 </div>
 
 <div class="resume-section">
@@ -372,6 +372,6 @@ permalink: /projects/ai/qkview-runbook/
 <div class="resume-section">
   <h2 class="section-heading">Reference</h2>
   <p>Andrej Karpathy's GitHub Article: <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">LLM Wiki</a></p>
-  <p>Related Project: <a href="/projects/ai/tmsh-wiki-brain/">TMSH LLM Wiki Brain</a> — the static reference companion that shares the same vault architecture</p>
-  <p>Related Project: <a href="/projects/ai/icontrol-wiki-brain/">iControl LLM Wiki Brain</a> — the REST API companion (in progress)</p>
+  <p>Related Project: <a href="{{ site.baseurl }}/projects/ai/tmsh-wiki-brain/">TMSH LLM Wiki Brain</a> — the static reference companion that shares the same vault architecture</p>
+  <p>Related Project: <a href="{{ site.baseurl }}/projects/ai/icontrol-wiki-brain/">iControl LLM Wiki Brain</a> — the REST API companion (in progress)</p>
 </div>

@@ -1,7 +1,7 @@
 # Site Settings
 title: "IT Lost and Found"
 name: "Michael Yates"
-description: "F5 ADC engineering, home lab, and automation adventures."
+description: "Infrastructure, home labs, automation, and AI builds."
 url: "https://itlostandfound.github.io"
 baseurl: "/Jekyll.GitHub"
 permalink: /blog/:year/:month/:day/:title.html
@@ -19,7 +19,7 @@ include:
 # Site Author
 author:
   name: "Michael Yates"
-  bio: "F5 ADC Engineer. Home labber. Learning Python."
+  bio: "Infrastructure, home labs, automation, and AI builds."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

@@ -1,4 +1,4 @@
-  <!-- Atmospheric background gradient overlay -->
+<!-- Atmospheric background gradient overlay -->
   <div class="background-overlay"></div>
 
   <!-- Mobile header (visible on small screens) -->
@@ -10,6 +10,29 @@
   <!-- Overlay for mobile sidebar -->
   <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
+  <!-- Determine which top-level sidebar section this page belongs to.
+       Projects sub-pages (/projects/ai/, /projects/homelab/)
+       should expand their OWN sidebar group, not the root /ai/ group.
+       We use assign + unless to avoid Liquid's lack of "not contains" operator. -->
+  {% assign is_ai_sidebar = false %}
+  {% assign is_hermes_sidebar = false %}
+  {% assign is_claude_sidebar = false %}
+  {% assign is_homelab_sidebar = false %}
+  {% unless page.url contains '/projects/' %}
+    {% if page.url contains '/ai/' %}
+      {% assign is_ai_sidebar = true %}
+    {% endif %}
+    {% if page.url contains '/ai/hermes' %}
+      {% assign is_hermes_sidebar = true %}
+    {% endif %}
+    {% if page.url contains '/ai/claude' %}
+      {% assign is_claude_sidebar = true %}
+    {% endif %}
+  {% endunless %}
+  {% if page.url contains '/homelab' %}
+    {% assign is_homelab_sidebar = true %}
+  {% endif %}
+
   <!-- Left sidebar navigation -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
@@ -20,40 +43,31 @@
       <a href="{{ '/about/' | relative_url }}" class="sidebar-link {% if page.url contains '/about' %}active{% endif %}">About Me</a>
       <a href="{{ '/projects/' | relative_url }}" class="sidebar-link {% if page.url contains '/projects' %}active{% endif %}">Projects</a>
 
-      <!-- F5 sub-nav -->
-      <div class="sidebar-group {% if page.layout == 'post' %}{% elsif page.url contains '/f5/' %}open{% endif %}">
-        <a href="{{ '/f5/' | relative_url }}" class="sidebar-link sidebar-parent {% if page.layout == 'post' %}{% elsif page.url contains '/f5/' %}active{% endif %}">F5 Networks</a>
-        <div class="sidebar-children">
-          <a href="{{ '/f5/ltm/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/f5/ltm/' %}active{% endif %}">LTM</a>
-          <a href="{{ '/f5/gtm/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/f5/gtm/' %}active{% endif %}">GTM/DNS</a>
-          <a href="{{ '/f5/asm/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/f5/asm/' %}active{% endif %}">ASM</a>
-          <a href="{{ '/f5/irules/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/f5/irules/' %}active{% endif %}">iRules</a>
-        </div>
-      </div>
-
       <!-- AI sub-nav -->
-      <div class="sidebar-group {% if page.layout == 'post' %}{% elsif page.url contains '/ai/' %}open{% endif %}">
-        <a href="{{ '/ai/' | relative_url }}" class="sidebar-link sidebar-parent {% if page.layout == 'post' %}{% elsif page.url contains '/ai/' %}active{% endif %}">AI</a>
+      <div class="sidebar-group {% if page.layout == 'post' %}{% elsif is_ai_sidebar %}open{% endif %}">
+        <a href="{{ '/ai/' | relative_url }}" class="sidebar-link sidebar-parent {% if page.layout == 'post' %}{% elsif is_ai_sidebar %}active{% endif %}">AI</a>
         <div class="sidebar-children">
-          <div class="sidebar-group {% if page.layout == 'post' %}{% elsif page.url contains '/ai/hermes' %}open{% endif %}">
-            <a href="{{ '/ai/hermes/' | relative_url }}" class="sidebar-link sidebar-parent sidebar-child {% if page.layout == 'post' %}{% elsif page.url contains '/ai/hermes' %}active{% endif %}">Hermes</a>
+          <div class="sidebar-group {% if page.layout == 'post' %}{% elsif is_hermes_sidebar %}open{% endif %}">
+            <a href="{{ '/ai/hermes/' | relative_url }}" class="sidebar-link sidebar-parent sidebar-child {% if page.layout == 'post' %}{% elsif is_hermes_sidebar %}active{% endif %}">Hermes</a>
             <div class="sidebar-children sidebar-nested">
               <a href="{{ '/ai/hermes/profiles/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/hermes/profiles/' %}active{% endif %}">Profiles</a>
               <a href="{{ '/ai/hermes/models/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/hermes/models/' %}active{% endif %}">Models</a>
               <a href="{{ '/ai/hermes/cron/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/hermes/cron/' %}active{% endif %}">Cron</a>
               <a href="{{ '/ai/hermes/skills/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/hermes/skills/' %}active{% endif %}">Skills</a>
               <a href="{{ '/ai/hermes/integrations/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/hermes/integrations/' %}active{% endif %}">Integrations</a>
+              <a href="{{ '/ai/hermes/memory/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/hermes/memory/' %}active{% endif %}">Memory</a>
               <a href="{{ '/ai/hermes/kanban/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/hermes/kanban/' %}active{% endif %}">Kanban</a>
             </div>
           </div>
-          <div class="sidebar-group {% if page.layout == 'post' %}{% elsif page.url contains '/ai/claude' %}open{% endif %}">
-            <a href="{{ '/ai/claude/' | relative_url }}" class="sidebar-link sidebar-parent sidebar-child {% if page.layout == 'post' %}{% elsif page.url contains '/ai/claude' %}active{% endif %}">Claude</a>
+          <div class="sidebar-group {% if page.layout == 'post' %}{% elsif is_claude_sidebar %}open{% endif %}">
+            <a href="{{ '/ai/claude/' | relative_url }}" class="sidebar-link sidebar-parent sidebar-child {% if page.layout == 'post' %}{% elsif is_claude_sidebar %}active{% endif %}">Claude</a>
             <div class="sidebar-children sidebar-nested">
               <a href="{{ '/ai/claude/auto-mode/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/claude/auto-mode/' %}active{% endif %}">Auto-Mode</a>
               <a href="{{ '/ai/claude/global-claude-md/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/claude/global-claude-md/' %}active{% endif %}">Global claude.md</a>
               <a href="{{ '/ai/claude/settings-json/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/claude/settings-json/' %}active{% endif %}">settings.json</a>
               <a href="{{ '/ai/claude/skills/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/claude/skills/' %}active{% endif %}">Skills</a>
               <a href="{{ '/ai/claude/local-claude-md/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/claude/local-claude-md/' %}active{% endif %}">Local claude.md</a>
+              <a href="{{ '/ai/claude/model-override/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/claude/model-override/' %}active{% endif %}">Model Override</a>
             </div>
           </div>
           <a href="{{ '/ai/unified/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/unified/' %}active{% endif %}">Unified</a>
@@ -61,8 +75,8 @@
       </div>
 
       <!-- Home Lab sub-nav -->
-      <div class="sidebar-group {% if page.layout == 'post' %}{% elsif page.url contains '/homelab' %}open{% endif %}">
-        <a href="{{ '/projects/homelab/' | relative_url }}" class="sidebar-link sidebar-parent {% if page.layout == 'post' %}{% elsif page.url contains '/homelab' %}active{% endif %}">Home Lab</a>
+      <div class="sidebar-group {% if page.layout == 'post' %}{% elsif is_homelab_sidebar %}open{% endif %}">
+        <span class="sidebar-link sidebar-parent {% if page.layout == 'post' %}{% elsif is_homelab_sidebar %}active{% endif %}">Home Lab</span>
         <div class="sidebar-children">
           <a href="{{ '/projects/homelab/olympus/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/projects/homelab/olympus/' %}active{% endif %}">Olympus</a>
           <a href="{{ '/projects/homelab/medusa/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/projects/homelab/medusa/' %}active{% endif %}">Medusa</a>

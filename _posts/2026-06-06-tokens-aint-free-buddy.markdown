@@ -36,7 +36,7 @@ I pulled the data directly from Hermes's SQLite database — `~/.hermes/state.db
 
 The two glm-5.1 variants are the same model through different provider configurations — one through the built-in Ollama Cloud relay, one through a custom endpoint. Together they accounted for over 99% of all tokens.
 
-And the qwen3-8b session? One session, nearly a million input tokens, seven thousand output. That's a single task that consumed context like a black hole and produced barely a peep.
+And the qwen3-8b session? One session, nearly a million input tokens, seven thousand output. That's a single task that consumed context like a black hole and produced barely a peep, but to be fair.  This is the Kanban PMO Agent and it's local, so this one gets a PASS.
 
 ## Why the Ratio Is So Lopsided
 
@@ -76,7 +76,7 @@ We built two mechanisms — one proactive, one reactive:
 A skill called `task-session-manager` that defines a completion protocol. When a task finishes — all TODO items resolved, user says "done", or the agent recognizes no remaining work — the agent follows a five-step sequence:
 
 1. **Verify completion.** Check the TODO list. If items remain, ask the user before wrapping up.
-2. **Save durable facts.** Push environment facts, user preferences, and stable state changes to Hermes Memory. Push key decisions and outcomes to Hindsight long-term memory.
+2. **Save durable facts.** Push environment facts, user preferences, and stable state changes to Hermes Memory. Push key decisions and outcomes to "The Vault" (Obsidian) long-term memory.
 3. **Save procedural knowledge (if warranted).** Did we discover a non-trivial technique or workaround? Save it as a skill. Routine tasks? Skip it.
 4. **Deliver a handoff message.** Tell the user what was accomplished and explicitly suggest `/new` for the next task.
 5. **Stop working.** No "anything else?" No "while I'm here..." The session is done.
@@ -111,13 +111,11 @@ When I say "wrap up" or "done" or "that's it," the agent loads the task-session-
 
 2. **Memory saves.** Every durable fact discovered during the session gets saved — paths, config values, version numbers, environment details, user corrections. These persist across sessions, so the next session starts with context instead of starting from zero.
 
-3. **Hindsight saves.** Key decisions, reasoning, and outcomes go to long-term memory. Not the full transcript — just the important bits that a future session would need to pick up where we left off.
+3. **Skill saves (if warranted).** If we discovered a non-trivial technique — say, a workaround for Ruby stdlib compatibility, or a specific Docker networking pattern — it gets saved as a class-level skill. One-off task results don't. "Analyzed token usage" isn't a skill. "How to fix Jekyll 3.9 incompatibility with Ruby 4.0" is.
 
-4. **Skill saves (if warranted).** If we discovered a non-trivial technique — say, a workaround for Ruby stdlib compatibility, or a specific Docker networking pattern — it gets saved as a class-level skill. One-off task results don't. "Analyzed token usage" isn't a skill. "How to fix Jekyll 3.9 incompatibility with Ruby 4.0" is.
+4. **Vault saves (if warranted).** If the session produced research or documentation that belongs in the Obsidian vault wiki, it gets written there.
 
-5. **Vault saves (if warranted).** If the session produced research or documentation that belongs in the Obsidian vault wiki, it gets written there.
-
-6. **Handoff message.** The agent delivers a summary:
+5. **Handoff message.** The agent delivers a summary:
 
 ```
 Task complete. Here's what was accomplished:

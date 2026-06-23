@@ -67,7 +67,3 @@ Available cloud-only models include DeepSeek V3.2, Gemini 3 Flash, MiniMax M2.1,
 ### Dashboard Model Discovery
 
 The Hermes dashboard groups custom providers by `(base_url, api_key)`. If multiple entries share the same base_url and have empty/missing api_key fields, they merge into one row and only the first entry's model is displayed. Always set a unique `api_key` (even a dummy string for local servers) to prevent this merging.
-
-### Token Cost Awareness
-
-Across ~2,400 sessions since May 2026, we've consumed 271M input tokens and 2.1M output tokens. 78 "heavy" sessions (30+ messages) account for 71.6% of all input tokens. Cloud spend awareness matters — monitor usage and consider local models for bulk work.

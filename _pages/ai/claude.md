@@ -27,4 +27,8 @@ Anthropic's agentic coding tool. Runs in the terminal, reads your repo, and writ
     <h3>Local claude.md</h3>
     <p>Directory-scoped instructions with inheritance</p>
   </a>
+  <a href="{{ '/ai/claude/model-override/' | relative_url }}" class="subpage-card">
+    <h3>Model Override</h3>
+    <p>Route Claude Code to third-party providers or local LLMs via env config</p>
+  </a>
 </div>

@@ -26,9 +26,9 @@ Hermes communicates via a Discord bot through the messaging gateway. The gateway
 
 ### Firecrawl (Self-Hosted)
 
-A self-hosted Firecrawl instance runs at `172.16.1.25:3002` for web scraping, crawling, and content extraction.
+A self-hosted Firecrawl instance runs on a different server for web scraping, crawling, and content extraction.
 
-**Core features** (Scrape, Crawl, Map, Search) work without any LLM — they handle HTTP fetching, HTML parsing, and content extraction deterministically.
+**Core features** (Scrape, Crawl, Map, Search) works without any LLM — they handle HTTP fetching, HTML parsing, and content extraction deterministically.
 
 **Extract endpoint** (`/v1/extract`) requires an LLM for structured data extraction using JSON schema. It reads `OPENAI_API_KEY` and `OPENAI_BASE_URL` environment variables. We wired LM Studio as the LLM backend:
 - Set `OPENAI_BASE_URL` to LM Studio's OpenAI-compatible endpoint (`http://host:port/v1`)
@@ -37,7 +37,7 @@ A self-hosted Firecrawl instance runs at `172.16.1.25:3002` for web scraping, cr
 
 ### Forgejo (Self-Hosted Git)
 
-Internal Git server at `172.16.0.110` (behind Traefik at `172.16.1.10`). Used for:
+Internal Git server used for:
 
 - **Hermes config backups** — Cron job pushes configs, profiles, skills, and cron state to Forgejo weekly
 - **AI wiki repository** — Knowledge base repo in the Agents organization
@@ -61,4 +61,4 @@ Hermes exposes an OpenAI-compatible API server on port 8642 (configurable). This
 
 ### NGINX Proxy (Playground)
 
-The Playground profile manages a Jekyll site served via NGINX on an LXC container at `192.168.1.31`. The `nginx-site-admin` skill is the governing umbrella for all site operations, cron jobs, and backup workflows.
+The Playground profile manages a Hermes created site served via NGINX on an LXC container. The `nginx-site-admin` skill is the governing umbrella for all site operations, cron jobs, and backup workflows.

@@ -74,14 +74,11 @@
         </div>
       </div>
 
-      <!-- Home Lab sub-nav -->
-      <div class="sidebar-group {% if page.layout == 'post' %}{% elsif is_homelab_sidebar %}open{% endif %}">
-        <span class="sidebar-link sidebar-parent {% if page.layout == 'post' %}{% elsif is_homelab_sidebar %}active{% endif %}">Home Lab</span>
+      <div class="sidebar-group {% if is_homelab_sidebar %}open{% endif %}">
+        <a href="{{ '/homelab/' | relative_url }}" class="sidebar-link sidebar-parent {% if is_homelab_sidebar %}active{% endif %}">Home Lab</a>
         <div class="sidebar-children">
-          <a href="{{ '/projects/homelab/olympus/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/projects/homelab/olympus/' %}active{% endif %}">Olympus</a>
-          <a href="{{ '/projects/homelab/medusa/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/projects/homelab/medusa/' %}active{% endif %}">Medusa</a>
-          <a href="{{ '/projects/homelab/macminim4llm/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/projects/homelab/macminim4llm/' %}active{% endif %}">MacMiniM4LLM</a>
-          <a href="{{ '/projects/homelab/minotaur/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/projects/homelab/minotaur/' %}active{% endif %}">Minotaur</a>
+          <a href="{{ '/homelab/equipment/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/homelab/equipment/' %}active{% endif %}">Lab Equipment</a>
+          <a href="{{ '/homelab/self-hosted/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/homelab/self-hosted/' %}active{% endif %}">Self Hosted</a>
         </div>
       </div>
 

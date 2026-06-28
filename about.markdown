@@ -10,7 +10,7 @@ permalink: /about/
   <p class="resume-summary">20+ years across Unix systems, enterprise networking, load balancing, application security, and automation. Now building toward AI orchestration and agent-driven infrastructure — not as a pivot, but as a compounding of everything that came before.</p>
   <div class="job-beyond">
     <span class="job-beyond-label">What the resume doesn't say:</span>
-    <p>I've been doing infrastructure long enough to remember when F5 ran on v9. The skills beyond my resume aren't side projects — they're the direction I'm building toward. Keep scrolling.</p>
+    <p>Started on Cisco as a Network Engineer. Moved through Microsoft web administration. Found F5 back when it still ran on v9. The skills beyond my resume aren't side projects. They're the direction I'm building toward.</p>
   </div>
 </div>
 
@@ -141,9 +141,16 @@ permalink: /about/
   <div class="highlights-grid">
 
     <div class="highlight-card">
-      <div class="highlight-icon">🏆</div>
+      <div class="highlight-icon"><img src="{{ '/assets/images/icons/f5_networks.svg' | relative_url }}" alt="F5 Networks" style="height:1.4rem;vertical-align:middle;"></div>
       <div>
         <p>F5 Networks DevCentral <strong>Most Valuable Professional (MVP)</strong> — recognized 2011–2015 for community contributions and deep technical expertise.</p>
+      </div>
+    </div>
+
+    <div class="highlight-card">
+      <div class="highlight-icon"><img src="{{ '/assets/images/icons/sheetz.svg' | relative_url }}" alt="Sheetz" style="height:1.4rem;vertical-align:middle;"></div>
+      <div>
+        <p>VIP Award Winner <strong>Recognized for Excellence</strong> — Honored at the 2023 Sheetz Partner Days for outstanding contributions and deep technical expertise in support of the business.</p>
       </div>
     </div>
 
@@ -269,36 +276,6 @@ permalink: /about/
           <td class="job-role-sm">Web Systems / F5 Engineer</td>
           <td class="job-date-sm">2006 – 2008</td>
         </tr>
-        <tr>
-          <td class="job-company">Electronic Data Systems (EDS)</td>
-          <td class="job-role-sm">IT Operations</td>
-          <td class="job-date-sm">2003 – 2006</td>
-        </tr>
-        <tr>
-          <td class="job-company">Alliance Data Systems</td>
-          <td class="job-role-sm">Unix Systems Administrator</td>
-          <td class="job-date-sm">2001 – 2002</td>
-        </tr>
-        <tr>
-          <td class="job-company">Motorola</td>
-          <td class="job-role-sm">Control Facilities Systems Administrator</td>
-          <td class="job-date-sm">2000 – 2001</td>
-        </tr>
-        <tr>
-          <td class="job-company">GTE Internetworking / U.S. Treasury</td>
-          <td class="job-role-sm">Network Operations Controller</td>
-          <td class="job-date-sm">1999 – 2000</td>
-        </tr>
-        <tr>
-          <td class="job-company">US Army - Space Command</td>
-          <td class="job-role-sm">Satellite Network Coordinator</td>
-          <td class="job-date-sm">1997 – 1999</td>
-        </tr>
-        <tr>
-          <td class="job-company">US Army - Signal Corps</td>
-          <td class="job-role-sm">Satellite Communications Operator Maintainer</td>
-          <td class="job-date-sm">1993 – 1997</td>
-        </tr>
       </tbody>
     </table>
   </div>
@@ -396,6 +373,7 @@ permalink: /about/
   <div class="philosophy-block">
     <blockquote>
       <p>Diagnosis before remediation. Automation before repetition. Documentation before frustration.</p>
+      <p>Problem Solved.  Problem Staying Solved.</p>
     </blockquote>
     <p>I don't guess — I troubleshoot. I don't repeat — I script. And I don't hoard knowledge — I document, share, and teach. The best infrastructure is the kind that doesn't need you at 2 AM. If I've done my job right, the 2 AM call never comes.</p>
   </div>

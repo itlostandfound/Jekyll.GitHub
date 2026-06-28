@@ -11,8 +11,8 @@ By night, you'll find me in the lab building automation workflows, experimenting
 ---
 
 <br />
-This site is the result of conversations with numerous LLMs where I expressed: "My knowledge goes beyond what I do for a living, but without a way to tell and prove this to people, it isn't helping me."<br />
+This site is the result of conversations with numerous LLMs where I expressed: "My knowledge goes beyond what I do for a living, but I'm lacking a way to tell and prove this to people."<br />
 <br />
-A resume can't show it all.  It just can't and even if you can squeeze it in it gets compressed into IT Bingo Buzzwords.<br />
+A resume can't show it all.  It just can't and even if you can squeeze it in, it gets compressed into IT Bingo Buzzwords.<br />
 <br />
-Their suggestion: don't just display results. Advertise the process, experiments, successes, failures, iteration logic. Show how I think, not just what I built. That's what companies are actually looking for.<br />
+AI Agent suggestions: Don't just display results. Advertise the process, experiments, successes, failures, iteration logic. Show how I think, not just what I built. That's what companies are actually looking for.<br />

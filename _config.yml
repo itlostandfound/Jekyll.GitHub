@@ -66,6 +66,7 @@ plugins:
   - jekyll-include-cache
 
 # Build settings
+future: true
 markdown: kramdown
 kramdown:
   input: GFM

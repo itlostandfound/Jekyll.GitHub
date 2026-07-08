@@ -9,11 +9,11 @@ AI-powered tooling and automation — LLM Wiki Brains, runbooks, and agentic ana
 <div class="subpage-list">
   <a href="{{ '/projects/ai/tmsh-wiki-brain/' | relative_url }}" class="subpage-card">
     <h3>TMSH LLM Wiki Brain</h3>
-    <p>Usage-harnessed TMSH command knowledge base · Completed 2026 · Active & Evolving</p>
+    <p>Usage-harnessed TMSH command knowledge base<br /> · Completed 2026<br /> · Active & Evolving</p>
   </a>
   <a href="{{ '/projects/ai/qkview-runbook/' | relative_url }}" class="subpage-card">
     <h3>QKView LLM Wiki Brain</h3>
-    <p>Agentic QKView analysis with self-improving runbook · Completed 2026 · Active & Evolving</p>
+    <p>Agentic QKView analysis with self-improving runbook<br /> · Completed 2026<br /> · Active & Evolving</p>
   </a>
   <a href="{{ '/projects/ai/icontrol-wiki-brain/' | relative_url }}" class="subpage-card">
     <h3>iControl LLM Wiki Brain</h3>
@@ -26,6 +26,10 @@ Full-stack web applications — task tracking and project management built for r
 <div class="subpage-list">
   <a href="{{ '/projects/task-tracker/' | relative_url }}" class="subpage-card">
     <h3>Task Tracker</h3>
-    <p>Multi-tracker task dashboard with royal aesthetic · v1 Complete · v2 In Testing</p>
+    <p>Multi-tracker task dashboard with royal aesthetic<br /> · Completed 2026<br /> · Released v3.0.2</p>
+  </a>
+  <a href="{{ '/projects/mcp-server-tasktracker/' | relative_url }}" class="subpage-card">
+    <h3>MCP Server for Task Tracker</h3>
+    <p>TypeScript MCP server exposing the full Task-Tracker API to AI agents<br /> · Completed 2026<br /> · Released v1.0.0</p>
   </a>
 </div>

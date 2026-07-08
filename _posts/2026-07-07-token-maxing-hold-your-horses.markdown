@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Token Maxing — Hold Your Horses..."
-date: 2026-07-07 13:30:00 -0500
+date: 2026-07-07 12:30:00 -0500
 categories: [hermes, ai, ollama, automation, self-hosted]
 ---
 
@@ -11,7 +11,7 @@ Here's the full story of what happened, what we discovered, and how we built a w
 
 ## What We Were Doing
 
-We had two Kanban dispatcher cron jobs running on Hermes Agent, powered by Ollama Cloud on the Max plan ($100/mo):
+We had two Kanban dispatcher cron jobs running on Hermes Agent, powered by Ollama Cloud on the Pro plan ($20/mo):
 
 - **PMO-Kanban-Dispatcher** — every 15 minutes, scanning the project board for tasks
 - **BB-PM-Kanban-Dispatcher** — every 10 minutes, running the Boogie Board project manager
@@ -25,9 +25,9 @@ We were also doing interactive work — conversations, research, writing — all
 At 11:50 AM CT on July 7, the BB-PM dispatcher hit this:
 
 ```
-HTTP 429: {"error":"you (myollamaai) have reached your session usage limit,
+HTTP 429: {"error":"you (My.Ollama.Account.Name) have reached your session usage limit,
 upgrade for higher limits: https://ollama.com/upgrade or add extra usage:
-https://ollama.com/settings (ref: 009c82ac-0c1d-4977-891a-0b5aeb75da2d)"}
+https://ollama.com/settings (ref: Reference.ID)"}
 ```
 
 The dispatcher retried 3 times with exponential backoff. All failed. Meanwhile, the PMO dispatcher was still burning tokens on the same account, making things worse.

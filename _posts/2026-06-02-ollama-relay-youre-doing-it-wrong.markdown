@@ -3,7 +3,7 @@ layout: post
 title: "Ollama Relay — You're Doing It WRONG!"
 date: 2026-06-02 12:00:00 -0500
 categories: [hermes, ai, self-hosted, ollama, infrastructure]
-image: /assets/images/posts/ollama-relay-youre-doing-it-wrong.svg
+image: /assets/images/posts/ollama-relay-youre-doing-it-wrong.jpg
 excerpt: "It started with 429s. Then it didn't stop. Here's what was really going on with Ollama Relay and how to fix it."
 ---
 

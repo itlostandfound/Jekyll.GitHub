@@ -3,7 +3,7 @@ layout: post
 title: "Hermes gets Hindsight"
 date: 2026-05-16 19:45:00 -0500
 categories: [hermes, ai, self-hosted]
-image: /assets/images/posts/hermes-gets-hindsight.svg
+image: /assets/images/posts/hermes-gets-hindsight.jpg
 excerpt: "We gave Hermes a memory. A real one. Not just sticky notes on a whiteboard — a knowledge graph that builds relationships and recalls what matters."
 ---
 

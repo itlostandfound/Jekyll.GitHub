@@ -3,7 +3,7 @@ layout: post
 title: "Hermes Gets Tools and Turbocharged"
 date: 2026-05-15 11:30:00 -0500
 categories: [hermes, ai, self-hosted, infrastructure]
-image: /assets/images/posts/hermes-gets-tools-and-turbocharged.svg
+image: /assets/images/posts/hermes-gets-tools-and-turbocharged.jpg
 excerpt: "Hermes got a new home today. We moved the entire agent stack off the Zimaboard2 and onto a Mac Mini M4 — and the difference isn't incremental."
 ---
 

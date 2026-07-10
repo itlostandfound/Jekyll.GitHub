@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Token Maxing — Hold Your Horses..."
-date: 2026-07-07 12:30:00 -0500
+date: 2026-07-07 19:30:00 -0500
 categories: [hermes, ai, ollama, automation, self-hosted]
-image: /assets/images/posts/token-maxing-hold-your-horses.svg
+image: /assets/images/posts/token-maxing-hold-your-horses.jpg
 excerpt: "We hit a wall. Hard. No API, no dashboard, no way to check how much Ollama Cloud quota you have left. You just get a 429 and everything stops."
 ---
 
@@ -13,18 +13,27 @@ Here's the full story of what happened, what we discovered, and how we built a w
 
 ## What We Were Doing
 
-We had two Kanban dispatcher cron jobs running on Hermes Agent, powered by Ollama Cloud on the Pro plan ($20/mo):
+We had a full agent fleet running on Ollama Cloud (Pro plan, $20/mo), building a project called The Boogie Board:
+
+- **Backend Developer** — writing Python, FastAPI, SQLAlchemy code non-stop
+- **UI/UX Designer** — generating Next.js, React, and TypeScript components
+- **QA Tester** — reviewing specs, running compliance checks, writing test cases
+- **BB-PM (Project Manager)** — decomposing tasks, routing work to specialists
+
+These four agents were the real token burners. Every call sends the full conversation context — system prompt, all prior messages, tool results to the LLM. Code generation agents are especially expensive because they produce long outputs and accumulate context rapidly.
+
+On top of that, two lightweight Kanban dispatcher cron jobs ran in the background:
 
 - **PMO-Kanban-Dispatcher** — every 15 minutes, scanning the project board for tasks
 - **BB-PM-Kanban-Dispatcher** — every 10 minutes, running the Boogie Board project manager
 
-Each dispatcher call sends the full conversation context — system prompt, all prior messages, tool results — to the LLM. That's roughly 42,000 tokens per API call. With two dispatchers hitting the API every 10-15 minutes, the token burn adds up fast.
+The dispatchers were peanuts by comparison. Roughly 42,000 tokens per call, a few times an hour. The specialist agents doing actual code generation were consuming the vast majority of the quota.
 
 We were also doing interactive work — conversations, research, writing — all on the same Ollama Cloud account.
 
 ## What Happened
 
-At 11:50 AM CT on July 7, the BB-PM dispatcher hit this:
+Then the BB-PM dispatcher hit this:
 
 ```
 HTTP 429: {"error":"you (My.Ollama.Account.Name) have reached your session usage limit,
@@ -32,9 +41,9 @@ upgrade for higher limits: https://ollama.com/upgrade or add extra usage:
 https://ollama.com/settings (ref: Reference.ID)"}
 ```
 
-The dispatcher retried 3 times with exponential backoff. All failed. Meanwhile, the PMO dispatcher was still burning tokens on the same account, making things worse.
+The dispatcher retried 3 times with exponential backoff. All failed. Meanwhile, the PMO dispatcher was still trying.
 
-**The root cause**: Two automated dispatchers sending ~42K tokens per call, every 10-15 minutes, accumulated enough GPU time to exhaust the 5-hour session limit within hours. And there was no way to see it coming.
+**The root cause**: A fleet of code-generating agents (Backend Dev, Designer, QA) burning through the 4-hour session limit, with two lightweight dispatchers that happened to hit the 429 first because they ran on a fixed schedule. There was no way to see it coming.
 
 ## What We Discovered
 
@@ -50,10 +59,10 @@ Ollama Cloud enforces **two** independent limits:
 
 | Window | Resets | Consequence of Exceeding |
 |--------|--------|--------------------------|
-| Session | Every 5 hours | Immediate 429 errors, wait up to 5 hours |
+| Session | Every 4 hours | Immediate 429 errors, wait up to 4 hours |
 | Weekly | Every 7 days | Multi-day outage |
 
-The session limit is the binding constraint. It resets every 5 hours, but you can blow through it fast with automated agents.
+The session limit is the binding constraint. It resets every 4 hours, but you can blow through it fast with automated agents.
 
 ### Usage is GPU time, not tokens
 
@@ -76,17 +85,17 @@ Input tokens dominated at 8.6M vs only 62K output. That's because every API call
 ### Calibrating against real data
 
 From the Ollama settings page, we read:
-- **Session (5hr)**: 24.1%
+- **Session (4hr)**: 24.1%
 - **Weekly (7d)**: 6.4%
 
 Our logs showed:
-- Session (5hr window): 13,574,960 tokens
+- Session (4hr window): 13,574,960 tokens
 - Weekly (7d window): 54,473,658 tokens
 
-Working backwards from the real percentages, we derived the effective token ceilings:
+Working backwards from the real percentages, we estimated the effective token ceilings:
 
 ```
-Session ceiling: 13,574,960 / 0.241 = ~56M tokens per 5 hours
+Session ceiling: 13,574,960 / 0.241 = ~56M tokens per 4 hours
 Weekly ceiling:  54,473,658 / 0.064 = ~849M tokens per week
 ```
 
@@ -98,7 +107,7 @@ The community estimate for the Max plan was ~1.25B tokens/week, but our calibrat
 
 | Window | Current % | Resets In | Risk |
 |--------|-----------|-----------|------|
-| Session (5hr) | 24.1% | ~4 hours | **HIGH** — this is where 429s happen |
+| Session (4hr) | 24.1% | ~4 hours | **HIGH** — this is where 429s happen |
 | Weekly (7d) | 6.4% | 5 days | Low — plenty of headroom |
 
 Weekly burn rate with dispatchers: ~3.2%/day. Without dispatchers: ~1-2%/day. The session limit is where you get caught off guard because it resets frequently and automated agents can spike it rapidly.
@@ -112,11 +121,13 @@ Since there's no API, we built a **hybrid watchdog** — automated tracking with
 A Python script at `~/.hermes/scripts/ollama-usage-watchdog.py` that:
 
 1. Parses `agent.log` every 30 minutes (via cron, `no_agent=true` — zero token cost)
-2. Counts tokens consumed in the last 5 hours (session) and 7 days (weekly)
+2. Counts tokens consumed in the last 4 hours (session) and 7 days (weekly)
 3. Divides by calibrated token ceilings to estimate percentages
 4. Compares against threshold levels
 5. Delivers alerts to Discord when thresholds are crossed
 6. Auto-pauses/resumes Kanban dispatcher cron jobs via `hermes cron pause/resume`
+
+Just in case you missed that last item.  Yes.  You can get Hermes to PAUSE your Agents to prevent shutdown.  That was a really nice thing to discover during this process.
 
 ### Thresholds
 
@@ -172,7 +183,7 @@ Both dispatchers are currently paused (manually, not by the watchdog).
 
 2. **The session limit is the binding constraint**, not the weekly limit. It resets every 5 hours and automated agents can spike it fast.
 
-3. **Agent workloads burn tokens much faster than interactive use.** Every call re-sends the full context. 42K tokens per call × 6 calls/hour = 252K tokens/hour just for one dispatcher.
+3. **Specialist agents doing real work burn tokens much faster than dispatchers or interactive use.** The Backend Dev, Designer, and QA agents were the heavy consumers. Dispatchers at 42K tokens/call were a rounding error by comparison.
 
 4. **No usage API means build your own observability.** A hybrid approach — automated tracking plus manual calibration — is the pragmatic solution until Ollama adds an API.
 

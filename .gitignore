@@ -8,3 +8,4 @@ Gemfile.lock
 *.swo
 *.bak
 .DS_Store
+publish.sh

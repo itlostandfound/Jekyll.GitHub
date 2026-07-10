@@ -3,7 +3,7 @@ layout: post
 title: "Hermes Gets a Brain"
 date: 2026-06-07 14:15:00 -0500
 categories: [hermes, ai, self-hosted, obsidian]
-image: /assets/images/posts/hermes-gets-a-brain.svg
+image: /assets/images/posts/hermes-gets-a-brain.jpg
 excerpt: "The Obsidian vault is live. Hermes now has a persistent knowledge base that compounds over time — not just a notepad, but a structured wiki."
 ---
 

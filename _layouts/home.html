@@ -12,15 +12,32 @@ layout: default
 
 {% if site.posts.size > 0 %}
 <h2 class="section-heading">Latest Writing</h2>
-<ul class="writing-list">
-  {% for post in site.posts limit:10 %}
-  <li>
-    <a href="{{ post.url | relative_url }}">
-      <span class="post-title">{{ post.title }}</span>
-      <span class="post-date">{{ post.date | date: '%B %d, %Y' }}</span>
+<div class="post-cards post-cards-home">
+  {% for post in site.posts limit:6 %}
+  <article class="post-card" data-categories="{{ post.categories | join: ',' }}">
+    <a href="{{ post.url | relative_url }}" class="post-card-link">
+      {% if post.image %}
+      <div class="post-card-image">
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+      </div>
+      {% endif %}
+      <div class="post-card-body">
+        <h2 class="post-card-title">{{ post.title }}</h2>
+        {% if post.excerpt %}
+        <p class="post-card-excerpt">{{ post.excerpt }}</p>
+        {% endif %}
+        <div class="post-card-meta">
+          <time class="post-card-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %d, %Y' }}</time>
+          <div class="post-card-tags">
+            {% for cat in post.categories limit:3 %}
+            <span class="post-card-tag">{{ cat }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
     </a>
-  </li>
+  </article>
   {% endfor %}
-</ul>
+</div>
 <p style="margin-top:.75rem;"><a href="{{ '/blog/' | relative_url }}">See all &rarr;</a></p>
 {% endif %}

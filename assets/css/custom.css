@@ -317,34 +317,172 @@ h1, h2, h3, h4 { color: var(--text-heading); font-weight: 600; }
 .subpage-card h3 { margin: 0 0 0.4rem; font-size: 1rem; }
 .subpage-card p { margin: 0; font-size: 0.85rem; opacity: 0.7; }
 
-/* ─── Writing List (Blog posts) ─── */
-.writing-list { list-style: none; }
+/* ─── Post Cards (Blog posts) ─── */
+.post-cards {
+  display: grid;
+  gap: 1.25rem;
+  margin: .5rem 0 2rem;
+}
 
-.writing-list li {
-  padding: .6rem 0;
-  border-bottom: 1px solid var(--border);
+.post-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s, transform .15s;
+  box-shadow: var(--card-shadow);
+  position: relative;
+}
+
+.post-card::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px solid var(--inner-border);
+  border-radius: 7px;
+  pointer-events: none;
+}
+
+.post-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 24px rgba(0,0,0,.2), 0 0 20px var(--glow-accent);
+  transform: translateY(-3px);
+}
+
+.post-card-link {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
 }
 
-.writing-list li:last-child { border-bottom: none; }
+.post-card-link:hover { text-decoration: none; }
 
-.writing-list .post-title {
-  font-weight: 500;
-  color: var(--text-heading);
+.post-card-image {
+  flex: 0 0 260px;
+  min-height: 180px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.post-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease;
+}
+
+.post-card:hover .post-card-image img {
+  transform: scale(1.05);
+}
+
+.post-card-body {
   flex: 1;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
 }
 
-.writing-list .post-date {
-  font-size: .85rem;
+.post-card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0 0 .5rem;
+  line-height: 1.3;
+}
+
+.post-card:hover .post-card-title {
+  color: var(--accent);
+}
+
+.post-card-excerpt {
+  font-size: .9rem;
+  color: var(--text-muted);
+  margin: 0 0 .75rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card-meta {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.post-card-date {
+  font-size: .82rem;
   color: var(--text-muted);
   white-space: nowrap;
 }
 
-.writing-list a:hover { text-decoration: none; }
-.writing-list a:hover .post-title { color: var(--accent); }
+.post-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+
+.post-card-tag {
+  display: inline-block;
+  padding: .15rem .55rem;
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: rgba(88, 166, 255, 0.08);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  border-radius: 12px;
+  transition: background .15s, border-color .15s;
+}
+
+[data-theme="light"] .post-card-tag {
+  background: rgba(9, 105, 218, 0.08);
+  border-color: rgba(9, 105, 218, 0.2);
+}
+
+.post-card:hover .post-card-tag {
+  background: rgba(88, 166, 255, 0.15);
+  border-color: rgba(88, 166, 255, 0.4);
+}
+
+/* Post cards without images (fallback) */
+.post-card:not(:has(.post-card-image)) .post-card-body {
+  padding: 1.25rem 1.5rem;
+}
+
+/* Responsive: stack cards vertically on mobile */
+@media (max-width: 768px) {
+  .post-card-link {
+    flex-direction: column;
+  }
+
+  .post-card-image {
+    flex: none;
+    width: 100%;
+    min-height: 160px;
+    max-height: 180px;
+  }
+
+  .post-card-body {
+    padding: 1rem;
+  }
+
+  .post-card-title {
+    font-size: 1.05rem;
+  }
+
+  .post-card-excerpt {
+    font-size: .85rem;
+    -webkit-line-clamp: 3;
+  }
+}
 
 /* ─── Project Cards ─── */
 .project-grid {
@@ -1348,7 +1486,7 @@ h1, h2, h3, h4 { color: var(--text-heading); font-weight: 600; }
 }
 
 /* Post items hidden/shown by tag filter */
-.writing-list li.tag-hidden {
+.post-card.tag-hidden {
   display: none !important;
 }
 

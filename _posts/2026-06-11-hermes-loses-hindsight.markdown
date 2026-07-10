@@ -3,6 +3,8 @@ layout: post
 title: "Hermes Loses Hindsight"
 date: 2026-06-11 20:30:00 -0500
 categories: [hermes, ai, self-hosted, obsidian]
+image: /assets/images/posts/hermes-loses-hindsight.svg
+excerpt: "We killed Hindsight today. Pulled it out by the roots — 353 MB of PostgreSQL and two API calls per turn that mostly extracted nothing."
 ---
 
 We killed Hindsight today. Pulled it out by the roots — 353 MB of PostgreSQL, 9 per-profile config directories, and two API calls per turn that mostly extracted nothing.  

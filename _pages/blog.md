@@ -32,18 +32,35 @@ permalink: /blog/
     <button class="tag-clear-btn" id="tag-clear" style="display:none;">Clear filter</button>
   </div>
 
-  <!-- Post list -->
+  <!-- Post cards -->
   {% if site.posts.size > 0 %}
-  <ul class="writing-list" id="post-list">
+  <div class="post-cards" id="post-list">
     {% for post in site.posts %}
-    <li data-categories="{{ post.categories | join: ',' }}">
-      <a href="{{ post.url | relative_url }}">
-        <span class="post-title">{{ post.title }}</span>
-        <span class="post-date">{{ post.date | date: '%B %d, %Y' }}</span>
+    <article class="post-card" data-categories="{{ post.categories | join: ',' }}">
+      <a href="{{ post.url | relative_url }}" class="post-card-link">
+        {% if post.image %}
+        <div class="post-card-image">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+        </div>
+        {% endif %}
+        <div class="post-card-body">
+          <h2 class="post-card-title">{{ post.title }}</h2>
+          {% if post.excerpt %}
+          <p class="post-card-excerpt">{{ post.excerpt }}</p>
+          {% endif %}
+          <div class="post-card-meta">
+            <time class="post-card-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %d, %Y' }}</time>
+            <div class="post-card-tags">
+              {% for cat in post.categories %}
+              <span class="post-card-tag">{{ cat }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
       </a>
-    </li>
+    </article>
     {% endfor %}
-  </ul>
+  </div>
   {% else %}
   <p>No posts yet. Check back soon.</p>
   {% endif %}

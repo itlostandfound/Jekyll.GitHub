@@ -1,7 +1,7 @@
 (function(){
   var activeCategory = null;
   var buttons = document.querySelectorAll('.tag-btn');
-  var posts = document.querySelectorAll('#post-list li');
+  var posts = document.querySelectorAll('#post-list .post-card');
   var noResults = document.getElementById('no-results');
   var clearBtn = document.getElementById('tag-clear');
 
@@ -34,20 +34,20 @@
 
   function filterPosts(cat) {
     var visibleCount = 0;
-    posts.forEach(function(li){
-      var cats = li.getAttribute('data-categories').split(',');
+    posts.forEach(function(card){
+      var cats = card.getAttribute('data-categories').split(',');
       if (cats.indexOf(cat) !== -1) {
-        li.style.display = '';
+        card.style.display = '';
         visibleCount++;
       } else {
-        li.style.display = 'none';
+        card.style.display = 'none';
       }
     });
     noResults.style.display = visibleCount === 0 ? 'block' : 'none';
   }
 
   function showAll() {
-    posts.forEach(function(li){ li.style.display = ''; });
+    posts.forEach(function(card){ card.style.display = ''; });
     noResults.style.display = 'none';
   }
 })();

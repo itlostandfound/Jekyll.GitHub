@@ -3,6 +3,8 @@ layout: post
 title: "TMSH LLM Wiki Brain"
 date: 2026-04-15 10:00:00 -0500
 categories: [ai, f5, self-hosted, obsidian, wiki-brain]
+image: /assets/images/posts/tmsh-wiki-brain.svg
+excerpt: "LLMs are confident. That's the problem. Ask any LLM for TMSH syntax and you'll get an answer that sounds authoritative — and is wrong."
 ---
 
 LLMs are confident. That's the problem.

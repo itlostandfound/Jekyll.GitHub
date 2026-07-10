@@ -3,6 +3,8 @@ layout: post
 title: "QKView LLM Wiki Brain"
 date: 2026-05-27 10:00:00 -0500
 categories: [ai, f5, self-hosted, obsidian, wiki-brain]
+image: /assets/images/posts/qkview-wiki-brain.svg
+excerpt: "The TMSH Wiki proved the pattern. The QKView Wiki weaponized it. F5 diagnostic archives analyzed consistently, every time."
 ---
 
 The TMSH Wiki proved the pattern. The QKView Wiki weaponized it.

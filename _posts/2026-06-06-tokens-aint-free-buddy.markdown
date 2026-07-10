@@ -3,6 +3,8 @@ layout: post
 title: "Token's ain't FREE Buddy..."
 date: 2026-06-06 22:00:00 -0500
 categories: [hermes, ai, self-hosted, infrastructure, cost-analysis]
+image: /assets/images/posts/tokens-aint-free-buddy.svg
+excerpt: "47.3 million input tokens. 446 thousand output tokens. Seven days. One Mac Mini. Here's what it really costs to run an AI agent."
 ---
 
 I stared at the numbers for a good minute.

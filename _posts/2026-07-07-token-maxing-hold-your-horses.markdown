@@ -3,6 +3,8 @@ layout: post
 title: "Token Maxing — Hold Your Horses..."
 date: 2026-07-07 12:30:00 -0500
 categories: [hermes, ai, ollama, automation, self-hosted]
+image: /assets/images/posts/token-maxing-hold-your-horses.svg
+excerpt: "We hit a wall. Hard. No API, no dashboard, no way to check how much Ollama Cloud quota you have left. You just get a 429 and everything stops."
 ---
 
 We hit a wall. Hard. And it wasn't the kind you see coming — there's no API, no dashboard, no programmable way to check how much Ollama Cloud quota you have left. You just get a 429 error and everything stops.

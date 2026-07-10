@@ -2,8 +2,8 @@
 title: "IT Lost and Found"
 name: "Michael Yates"
 description: "Infrastructure, home labs, automation, and AI builds."
-url: "https://itlostandfound.github.io"
-baseurl: "/Jekyll.GitHub"
+url: "https://www.itlostandfound.xyz"
+baseurl: ""
 permalink: /blog/:year/:month/:day/:title.html
 timezone: America/Chicago
 locale: "en-US"

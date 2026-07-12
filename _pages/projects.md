@@ -17,7 +17,11 @@ AI-powered tooling and automation — LLM Wiki Brains, runbooks, and agentic ana
   </a>
   <a href="{{ '/projects/ai/icontrol-wiki-brain/' | relative_url }}" class="subpage-card">
     <h3>iControl LLM Wiki Brain</h3>
-    <p>Full iControl knowledge base with crawl-and-discover · In-Queue 2026</p>
+    <p>Full iControl knowledge base with crawl-and-discover<br />  · In-Queue 2026</p>
+  </a>
+  <a href="{{ '/projects/ai/generic-llm-wiki-mcp/' | relative_url }}" class="subpage-card">
+    <h3>Generic LLM Wiki (MCP)</h3>
+    <p>MCP server that turns any LLM Wiki into a grounded LLM knowledge base for Multi-Agent use<br />  · In Development 2026</p>
   </a>
 </div>
 
@@ -26,10 +30,10 @@ Full-stack web applications — task tracking and project management built for r
 <div class="subpage-list">
   <a href="{{ '/projects/task-tracker/' | relative_url }}" class="subpage-card">
     <h3>Task Tracker</h3>
-    <p>Multi-tracker task dashboard with royal aesthetic<br /> · Completed 2026<br /> · Released v3.0.2</p>
+    <p>Multi-tracker task dashboard with royal aesthetic<br /> · Completed 2026<br /> · Released v3.0.3</p>
   </a>
   <a href="{{ '/projects/mcp-server-tasktracker/' | relative_url }}" class="subpage-card">
     <h3>MCP Server for Task Tracker</h3>
-    <p>TypeScript MCP server exposing the full Task-Tracker API to AI agents<br /> · Completed 2026<br /> · Released v1.0.0</p>
+    <p>TypeScript MCP server exposing the full Task-Tracker API to AI agents<br /> · Active Development<br /> · Released v1.1.1</p>
   </a>
 </div>

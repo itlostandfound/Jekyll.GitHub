@@ -130,7 +130,7 @@ permalink: /projects/task-tracker/
     <tbody>
       <tr>
         <td class="job-company">Status</td>
-        <td class="job-role-sm">v3.0.2 · In Production</td>
+        <td class="job-role-sm">v3.0.3 · In Production</td>
       </tr>
       <tr>
         <td class="job-company">Stack</td>

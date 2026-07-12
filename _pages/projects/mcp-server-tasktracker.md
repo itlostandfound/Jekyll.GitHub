@@ -140,7 +140,7 @@ permalink: /projects/mcp-server-tasktracker/
     <tbody>
       <tr>
         <td class="job-company">Status</td>
-        <td class="job-role-sm">v1.0.0 · In Production</td>
+        <td class="job-role-sm">v1.1.1 · In Production</td>
       </tr>
       <tr>
         <td class="job-company">Language</td>

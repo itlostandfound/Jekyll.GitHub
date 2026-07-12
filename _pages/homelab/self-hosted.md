@@ -286,6 +286,12 @@ permalink: /homelab/self-hosted/
         <td>Autonomous AI agent framework designed for genuine problem-solving. Uses tool-calling, web search, and code execution in a self-correcting loop. Runs locally with Docker sandboxing for safe code execution.</td>
       </tr>
       <tr>
+        <td><img src="{{ '/assets/images/icons/firecrawl-icon.png' | relative_url }}" alt="Firecrawl" width="24" height="24" style="vertical-align:middle; margin-right:6px; background-color:white; border-radius:4px; padding:2px;">Firecrawl</td>
+        <td><span style="background-color:#16a34a;color:white;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap">Active</span></td>
+        <td><a href="https://github.com/mendableai/firecrawl">GitHub</a></td>
+        <td>Self-hosted web crawling and data extraction engine. Scrape, crawl, map URLs, and extract structured data via API. Powers agent workflows with deep site traversal and content extraction.</td>
+      </tr>
+      <tr>
         <td><img src="https://cdn.jsdelivr.net/gh/selfhst/icons/png/hermes-agent.png" alt="Hermes Agent" width="24" height="24" style="vertical-align:middle; margin-right:6px;">Hermes Agent</td>
         <td><span style="background-color:#16a34a;color:white;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap">Active</span></td>
         <td><a href="https://github.com/nousresearch/hermes-agent">GitHub</a></td>
@@ -385,6 +391,7 @@ permalink: /homelab/self-hosted/
         <td>GitHub</td>
         <td>An agentic application that utilizes a locally hosted Firecrawl instance (as a requirement) to find available jobs on a user defined list of sites.  This then queues the jobs for an agentic analysis of the job posting and scores them based on the user defined skills.  This is functional and operational, but requires additional development prior to release consideration.</td>
       </tr>
+
       <tr>
         <td>Task Tracker</td>
         <td><span style="background-color:#0d9488;color:white;padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;white-space:nowrap">Released / In-Development</span></td>

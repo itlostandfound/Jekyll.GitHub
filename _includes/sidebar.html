@@ -18,6 +18,7 @@
   {% assign is_hermes_sidebar = false %}
   {% assign is_claude_sidebar = false %}
   {% assign is_homelab_sidebar = false %}
+  {% assign is_github_sidebar = false %}
   {% unless page.url contains '/projects/' %}
     {% if page.url contains '/ai/' %}
       {% assign is_ai_sidebar = true %}
@@ -32,6 +33,9 @@
   {% if page.url contains '/homelab' %}
     {% assign is_homelab_sidebar = true %}
   {% endif %}
+  {% if page.url contains '/github' %}
+    {% assign is_github_sidebar = true %}
+  {% endif %}
 
   <!-- Left sidebar navigation -->
   <aside class="sidebar" id="sidebar">
@@ -41,7 +45,9 @@
     <nav class="sidebar-nav">
       <a href="{{ '/' | relative_url }}" class="sidebar-link {% if page.url == '/' %}active{% endif %}">Home</a>
       <a href="{{ '/about/' | relative_url }}" class="sidebar-link {% if page.url contains '/about' %}active{% endif %}">About Me</a>
-      <a href="{{ '/projects/' | relative_url }}" class="sidebar-link {% if page.url contains '/projects' %}active{% endif %}">Projects</a>
+      <hr class="sidebar-divider">
+      <a href="{{ '/blog/' | relative_url }}" class="sidebar-link {% if page.url contains '/blog' or page.layout == 'post' %}active{% endif %}">Blog</a>
+      <hr class="sidebar-divider">
 
       <!-- AI sub-nav -->
       <div class="sidebar-group {% if page.layout == 'post' %}{% elsif is_ai_sidebar %}open{% endif %}">
@@ -74,6 +80,15 @@
         </div>
       </div>
 
+      <div class="sidebar-group {% if is_github_sidebar %}open{% endif %}">
+        <a href="{{ '/github/' | relative_url }}" class="sidebar-link sidebar-parent {% if is_github_sidebar %}active{% endif %}">GitHub</a>
+        <div class="sidebar-children">
+          <a href="{{ '/github/cheatsheet/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/github/cheatsheet/' %}active{% endif %}">GitHub Cheatsheet</a>
+          <a href="{{ '/github/actions/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/github/actions/' %}active{% endif %}">GitHub Actions</a>
+          <a href="{{ '/github/pages/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/github/pages/' %}active{% endif %}">GitHub Pages</a>
+        </div>
+      </div>
+
       <div class="sidebar-group {% if is_homelab_sidebar %}open{% endif %}">
         <a href="{{ '/homelab/' | relative_url }}" class="sidebar-link sidebar-parent {% if is_homelab_sidebar %}active{% endif %}">Home Lab</a>
         <div class="sidebar-children">
@@ -82,7 +97,8 @@
         </div>
       </div>
 
-      <a href="{{ '/blog/' | relative_url }}" class="sidebar-link {% if page.url contains '/blog' or page.layout == 'post' %}active{% endif %}">Blog</a>
+      <a href="{{ '/projects/' | relative_url }}" class="sidebar-link {% if page.url contains '/projects' %}active{% endif %}">Projects</a>
+
     </nav>
     <div class="sidebar-footer">
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>

@@ -35,6 +35,8 @@ A self-hosted Firecrawl instance runs on a different server for web scraping, cr
 - Set `OPENAI_API_KEY` to any value (LM Studio ignores it)
 - This enables structured extraction without a paid cloud API key
 
+For the full Firecrawl breakdown (self-hosting, MCP server configuration, tool reference, and use cases), see [Unified / Firecrawl](/ai/unified/firecrawl/).
+
 ### Forgejo (Self-Hosted Git)
 
 Internal Git server used for:

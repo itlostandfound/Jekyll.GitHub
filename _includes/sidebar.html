@@ -76,7 +76,12 @@
               <a href="{{ '/ai/claude/model-override/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/claude/model-override/' %}active{% endif %}">Model Override</a>
             </div>
           </div>
-          <a href="{{ '/ai/unified/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/unified/' %}active{% endif %}">Unified</a>
+          <div class="sidebar-group {% if page.layout == 'post' %}{% elsif page.url contains '/ai/unified' %}open{% endif %}">
+            <a href="{{ '/ai/unified/' | relative_url }}" class="sidebar-link sidebar-parent sidebar-child {% if page.layout == 'post' %}{% elsif page.url contains '/ai/unified' %}active{% endif %}">Unified</a>
+            <div class="sidebar-children sidebar-nested">
+              <a href="{{ '/ai/unified/firecrawl/' | relative_url }}" class="sidebar-link sidebar-child {% if page.url == '/ai/unified/firecrawl/' %}active{% endif %}">Firecrawl</a>
+            </div>
+          </div>
         </div>
       </div>
 

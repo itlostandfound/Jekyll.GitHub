@@ -35,13 +35,30 @@
       hamburger.addEventListener('click', openSidebar);
       overlay.addEventListener('click', closeSidebar);
 
-      // Sidebar dropdown toggle: click parent to expand/collapse children.
-      // Click toggles open/closed. Holding Shift (or Ctrl) navigates to the section page.
+      // Sidebar accordion: click parent to expand/collapse children.
+      // Opening a group collapses all other groups. Holding Shift (or Ctrl) navigates to the section page.
       document.querySelectorAll('.sidebar-parent').forEach(function(parent){
         parent.addEventListener('click', function(e){
           var group = parent.closest('.sidebar-group');
           if (!group) return;
-          group.classList.toggle('open');
+          var isOpen = group.classList.contains('open');
+          // Collapse all sibling groups at the same nav level
+          document.querySelectorAll('.sidebar-nav > .sidebar-group').forEach(function(g){
+            g.classList.remove('open');
+          });
+          // Also collapse nested groups (Hermes children, Claude children, etc.)
+          document.querySelectorAll('.sidebar-children > .sidebar-group').forEach(function(g){
+            g.classList.remove('open');
+          });
+          // Toggle this group: if it was closed, open it; if it was open, leave it closed
+          if (!isOpen) {
+            group.classList.add('open');
+            // If opening a top-level group, also ensure nested parent is open if we're inside one
+            var parentGroup = group.closest('.sidebar-children') ? group.closest('.sidebar-children').closest('.sidebar-group') : null;
+            if (parentGroup) {
+              parentGroup.classList.add('open');
+            }
+          }
           e.preventDefault();
         });
       });

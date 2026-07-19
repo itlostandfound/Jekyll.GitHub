@@ -9,7 +9,7 @@ AI-powered tooling and automation — LLM Wiki Brains, runbooks, and agentic ana
 <div class="subpage-list">
   <a href="{{ '/projects/ai/tmsh-wiki-brain/' | relative_url }}" class="subpage-card">
     <h3>TMSH LLM Wiki Brain</h3>
-    <p>Usage-harnessed TMSH command knowledge base<br /> · Completed 2026<br /> · Active & Evolving</p>
+    <p>Usage-harnessed TMSH command knowledge base<br /> · Completed 2026<br /> · Retiring</p>
   </a>
   <a href="{{ '/projects/ai/qkview-runbook/' | relative_url }}" class="subpage-card">
     <h3>QKView LLM Wiki Brain</h3>
@@ -21,7 +21,16 @@ AI-powered tooling and automation — LLM Wiki Brains, runbooks, and agentic ana
   </a>
   <a href="{{ '/projects/ai/generic-llm-wiki-mcp/' | relative_url }}" class="subpage-card">
     <h3>Generic LLM Wiki (MCP)</h3>
-    <p>MCP server that turns any LLM Wiki into a grounded LLM knowledge base for Multi-Agent use<br />  · In Development 2026</p>
+    <p>MCP server that turns any LLM Wiki into a grounded LLM knowledge base for Multi-Agent use<br />  · Completed 2026</p>
+  </a>
+</div>
+
+Open source projects adopted, deployed, and integrated into the home lab — real operational deployments, not just clones.
+
+<div class="subpage-list">
+  <a href="{{ '/projects/open-source/graphiti/' | relative_url }}" class="subpage-card">
+    <h3>Graphiti</h3>
+    <p>Temporal context graphs for AI agents — knowledge that evolves<br /> · Forked<br /> · Fixed<br /> · Deployed 2026 · Active</p>
   </a>
 </div>
 
@@ -30,10 +39,10 @@ Full-stack web applications — task tracking and project management built for r
 <div class="subpage-list">
   <a href="{{ '/projects/task-tracker/' | relative_url }}" class="subpage-card">
     <h3>Task Tracker</h3>
-    <p>Multi-tracker task dashboard with royal aesthetic<br /> · Completed 2026<br /> · Released v3.0.3</p>
+    <p>Multi-tracker task dashboard with royal aesthetic<br /> · Completed 2026</p>
   </a>
   <a href="{{ '/projects/mcp-server-tasktracker/' | relative_url }}" class="subpage-card">
     <h3>MCP Server for Task Tracker</h3>
-    <p>TypeScript MCP server exposing the full Task-Tracker API to AI agents<br /> · Active Development<br /> · Released v1.1.1</p>
+    <p>TypeScript MCP server exposing the full Task-Tracker API to AI agents<br /> · Completed 2026</p>
   </a>
 </div>

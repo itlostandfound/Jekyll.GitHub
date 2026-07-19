@@ -22,4 +22,8 @@ permalink: /github/
     <h3>GitHub Pages</h3>
     <p>How GitHub Pages hosts this Jekyll site and why static hosting works.</p>
   </a>
+  <a href="{{ '/github/fork/' | relative_url }}" class="subpage-card">
+    <h3>GitHub Fork</h3>
+    <p>My first GitHub fork: fixing six bugs in Graphiti, building custom Docker images, and learning that open source does not mean works out of the box.</p>
+  </a>
 </div>
